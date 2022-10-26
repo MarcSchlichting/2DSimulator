@@ -1,3 +1,4 @@
+from multiprocessing.sharedctypes import Value
 import numpy as np
 from geometry import Point, Rectangle, Circle, Ring
 from typing import Union
@@ -5,13 +6,13 @@ import copy
 
 
 class Entity:
-    def __init__(self, center: Point, heading: float, movable: bool = True, friction: float = 0, driver_model: str = None):
+    def __init__(self, center: Point, heading: float, movable: bool = True, friction: float = 0, integration_method: str = "Heun"):
         self.center = center # this is x, y
         self.heading = heading
         self.movable = movable
         self.color = 'ghost white'
         self.collidable = True
-        self.driver_model = driver_model
+        self.integration_method = integration_method
         if movable:
             self.friction = friction
             self.velocity = Point(0,0) # this is xp, yp
@@ -21,6 +22,9 @@ class Entity:
             self.inputAcceleration = 0
             self.max_speed = np.inf
             self.min_speed = 0
+            self.max_acceleration = np.inf
+            self.max_break_acceleration = -np.inf
+            self.position_sensor_std = 0
     
     @property
     def speed(self) -> float:
@@ -45,7 +49,8 @@ class Entity:
     
     def tick(self, dt: float):
         if self.movable:
-            if self.driver_model == "IDM":
+            if self.integration_method == "Heun":
+                # print("Heun")
                 speed = self.speed
                 heading = self.heading
             
@@ -55,7 +60,7 @@ class Entity:
                 # Dorsa Sadigh, Anca D. Dragan, S. Shankar Sastry, Sanjit A. Seshia
                 
                 new_angular_velocity = speed * self.inputSteering
-                new_acceleration = self.inputAcceleration - self.friction * speed
+                new_acceleration = np.clip(self.inputAcceleration - self.friction * speed, self.max_break_acceleration, self.max_acceleration)
                 
                 new_heading = heading + (self.angular_velocity + new_angular_velocity) * dt / 2.
                 new_speed = np.clip(speed + (self.acceleration + new_acceleration) * dt / 2., self.min_speed, self.max_speed)
@@ -74,8 +79,39 @@ class Entity:
                 self.angular_velocity = new_angular_velocity
                 
                 self.buildGeometry()
+
+            elif self.integration_method == "Forward_Euler":
+                # print("Forward Euler")
+                speed = self.speed
+                heading = self.heading
+            
+
+                # Point-mass dynamics based on
+                # "Active Preference-Based Learning of Reward Functions" by
+                # Dorsa Sadigh, Anca D. Dragan, S. Shankar Sastry, Sanjit A. Seshia
+                
+                new_angular_velocity = speed * self.inputSteering
+                new_acceleration = np.clip(self.inputAcceleration - self.friction * speed, self.max_break_acceleration, self.max_acceleration)
+                
+                new_heading = heading + new_angular_velocity * dt 
+                new_speed = np.clip(speed + new_acceleration * dt , self.min_speed, self.max_speed)
+                
+                new_velocity = Point((new_speed * np.cos(new_heading)), (new_speed * np.sin(new_heading)))
+                
+                new_center = self.center + new_velocity * dt 
+                
+                
+                
+                self.center = new_center
+                self.heading = np.mod(new_heading, 2*np.pi) # wrap the heading angle between 0 and +2pi
+                self.velocity = new_velocity
+                self.acceleration = new_acceleration
+                self.angular_velocity = new_angular_velocity
+                
+                self.buildGeometry()
             
             else:   #this defaults to the bicycle kinematics
+                raise ValueError
                 speed = self.speed
                 heading = self.heading
             
@@ -87,7 +123,7 @@ class Entity:
                 beta = np.arctan(lr / (lf + lr) * np.tan(self.inputSteering))
                 
                 new_angular_velocity = speed * self.inputSteering # this is not needed and used for this model, but let's keep it for consistency (and to avoid if-else statements)
-                new_acceleration = self.inputAcceleration - self.friction
+                new_acceleration =  np.clip(self.inputAcceleration - self.friction * speed, self.max_break_acceleration, self.max_acceleration)
                 new_speed = np.clip(speed + new_acceleration * dt, self.min_speed, self.max_speed)
                 new_heading = heading + ((speed + new_speed)/lr)*np.sin(beta)*dt/2.
                 angle = (heading + new_heading)/2. + beta
