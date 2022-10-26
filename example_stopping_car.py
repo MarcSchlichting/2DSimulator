@@ -92,9 +92,11 @@ def compare_trajectories(results1, results2):
     """
     run1_x = results1["x_pos"][1]
     run1_y = results1["y_pos"][1]
+    run1_collision = results1["collision"].astype(np.int32)
     run1_t = results1["t"]
     run2_x = results2["x_pos"][1]
     run2_y = results2["y_pos"][1]
+    run2_collision = results2["collision"].astype(np.int32)
     run2_t = results2["t"]
 
     #downsample
@@ -103,10 +105,12 @@ def compare_trajectories(results1, results2):
             t_common = run2_t
             run1_x = np.interp(t_common,run1_t,run1_x)
             run1_y = np.interp(t_common,run1_t,run1_y)
+            run1_collision = np.interp(t_common,run1_t,run1_collision)
         else:
             t_common = run1_t
             run2_x = np.interp(t_common,run2_t,run2_x)
             run2_y = np.interp(t_common,run2_t,run2_y)
+            run2_collision = np.interp(t_common,run2_t,run2_collision)
          
     else:
         t_common = run1_t
@@ -114,23 +118,32 @@ def compare_trajectories(results1, results2):
     #compute MSE
     run1_pos = np.stack([run1_x,run1_y])
     run2_pos = np.stack([run2_x,run2_y])
+    #MSE for trajectories
     MSE = (np.linalg.norm(run1_pos-run2_pos,axis=0)**2).mean()
+    #BCE for collision
+    BCE = np.mean(run1_collision * np.log(run2_collision))
     
-    return MSE
+    return MSE,BCE
     
 
 if __name__=="__main__":
     import matplotlib.pyplot as plt
-    # #compare against standard case dt=0.1
-    # MSEs = []
-    # dts = np.arange(0.1,2.1,0.1)
-    # for dt in dts:
-    #     res1 = run_scenario(0.1,"Heun",0)
-    #     res2 = run_scenario(dt,"Heun",0)
-    #     MSEs.append(compare_trajectories(res1,res2))
-    
-    # plt.plot(dts,MSEs)
-    # plt.show()
+    #compare against standard case dt=0.1
+    MSEs = []
+    BCEs =[]
+    dts = np.arange(0.1,2.1,0.1)
+    for dt in dts:
+        res1 = run_scenario(0.1,"Heun",0)
+        res2 = run_scenario(dt,"Heun",0)
+        MSE,BCE = compare_trajectories(res1,res2)
+        MSEs.append(MSE)
+        BCEs.append(BCE)
+
+    fig,axs = plt.subplots(2,1,figsize=(10,10))
+    axs[0].plot(dts,MSEs)
+    axs[1].plot(dts,BCEs)
+    fig.show()
+    print("stop")
 
     # #compare Heun vs Euler Forward for different dt
     # MSEs = []
@@ -143,16 +156,16 @@ if __name__=="__main__":
     # plt.plot(dts,MSEs)
     # plt.show()
 
-    # #compare different sensor noise for Heun method and dt=0.1
-    MSEs = []
-    stds = np.logspace(-1,1,20,base=10)
-    for std in stds:
-        res1 = run_scenario(0.1,"Heun",0)
-        res2 = run_scenario(0.1,"Heun",std)
-        MSEs.append(compare_trajectories(res1,res2))
+    # # #compare different sensor noise for Heun method and dt=0.1
+    # MSEs = []
+    # stds = np.logspace(-1,1,20,base=10)
+    # for std in stds:
+    #     res1 = run_scenario(0.1,"Heun",0)
+    #     res2 = run_scenario(0.1,"Heun",std)
+    #     MSEs.append(compare_trajectories(res1,res2))
     
-    plt.semilogx(stds,MSEs)
-    plt.show()
+    # plt.semilogx(stds,MSEs)
+    # plt.show()
 
 
 
