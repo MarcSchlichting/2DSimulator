@@ -1,0 +1,24 @@
+import numpy as np
+import agents
+
+def idm_driver(w,car_ego,car1):
+    #Model Parameters
+    v_0 = car_ego.max_speed
+    s_0 = 3
+    T = 2
+    a = 1.5
+    b = 2
+    delta = 4
+
+    #Helper Quantities
+    v_alpha = car_ego.speed
+    delta_v_alpha = np.abs(car_ego.speed-car1.speed)
+    pos_diff = car_ego.center - car1.center
+    diff_norm = np.linalg.norm(np.array([pos_diff.x,pos_diff.y]))
+    s_alpha = diff_norm - car_ego.size.x/2 - car1.size.x /2
+    s_star = s_0 + v_alpha * T + (v_alpha * delta_v_alpha)/(2 * np.sqrt(a * b))
+
+    #compute v_dot
+    v_dot = a * (1- (v_alpha/v_0)**delta - (s_star/s_alpha)**2)
+
+    return 0, v_dot
