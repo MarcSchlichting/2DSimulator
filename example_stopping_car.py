@@ -1,3 +1,4 @@
+from asyncio import run
 from multiprocessing.context import SpawnProcess
 import numpy as np
 from world import World
@@ -5,6 +6,9 @@ from agents import Car, RectangleBuilding, Pedestrian, Painting
 from geometry import Point
 import time
 from idm import idm_driver
+import torch
+import plot
+import time
 
 def run_scenario(dt,integration_method,sensor_std):
 
@@ -88,7 +92,7 @@ def run_scenario(dt,integration_method,sensor_std):
     return results_dict
 
 def compare_trajectories(results1, results2):
-    """Compare the trajectories of two runs and compute the MSE between the two trakectories (if two different sampling frequency, the higher frequency is downsampled)
+    """Compare the trajectories of two runs and compute the MSE between the two trajectories (if two different sampling frequency, the higher frequency is downsampled)
     """
     run1_x = results1["x_pos"][1]
     run1_y = results1["y_pos"][1]
@@ -121,55 +125,85 @@ def compare_trajectories(results1, results2):
     #MSE for trajectories
     MSE = (np.linalg.norm(run1_pos-run2_pos,axis=0)**2).mean()
     #BCE for collision
-    BCE = np.mean(run1_collision * np.log(run2_collision))
+    BCE = torch.nn.functional.binary_cross_entropy(torch.Tensor(run1_collision),torch.Tensor(run2_collision))
     
     return MSE,BCE
     
 
 if __name__=="__main__":
     import matplotlib.pyplot as plt
-    #compare against standard case dt=0.1
-    MSEs = []
-    BCEs =[]
-    dts = np.arange(0.1,2.1,0.1)
-    for dt in dts:
-        res1 = run_scenario(0.1,"Heun",0)
-        res2 = run_scenario(dt,"Heun",0)
-        MSE,BCE = compare_trajectories(res1,res2)
-        MSEs.append(MSE)
-        BCEs.append(BCE)
+    # #compare against standard case dt=0.1
+    # MSEs = []
+    # BCEs =[]
+    # dts = np.arange(0.1,2.1,0.1)
+    # for dt in dts:
+    #     res1 = run_scenario(0.1,"Heun",0)
+    #     res2 = run_scenario(dt,"Heun",0)
+    #     MSE,BCE = compare_trajectories(res1,res2)
+    #     MSEs.append(MSE)
+    #     BCEs.append(BCE)
 
-    fig,axs = plt.subplots(2,1,figsize=(10,10))
-    axs[0].plot(dts,MSEs)
-    axs[1].plot(dts,BCEs)
-    fig.show()
-    print("stop")
+    # fig,axs = plt.subplots(2,1,figsize=(10,10))
+    # axs[0].plot(dts,MSEs)
+    # axs[1].plot(dts,BCEs)
+    # fig.show()
+    # print("stop")
 
     # #compare Heun vs Euler Forward for different dt
     # MSEs = []
+    # BCEs = []
     # dts = np.arange(0.1,2.1,0.1)
     # for dt in dts:
     #     res1 = run_scenario(dt,"Heun",0)
     #     res2 = run_scenario(dt,"Forward_Euler",0)
-    #     MSEs.append(compare_trajectories(res1,res2))
+    #     MSE,BCE = compare_trajectories(res1,res2)
+    #     MSEs.append(MSE)
+    #     BCEs.append(BCE)
     
-    # plt.plot(dts,MSEs)
-    # plt.show()
+    # fig,axs = plt.subplots(2,1,figsize=(10,10))
+    # axs[0].plot(dts,MSEs)
+    # axs[1].plot(dts,BCEs)
+    # fig.show()
+    # print("stop")
 
     # # #compare different sensor noise for Heun method and dt=0.1
     # MSEs = []
+    # BCEs = []
     # stds = np.logspace(-1,1,20,base=10)
     # for std in stds:
     #     res1 = run_scenario(0.1,"Heun",0)
     #     res2 = run_scenario(0.1,"Heun",std)
-    #     MSEs.append(compare_trajectories(res1,res2))
+    #     MSE,BCE = compare_trajectories(res1,res2)
+    #     MSEs.append(MSE)
+    #     BCEs.append(BCE)
     
-    # plt.semilogx(stds,MSEs)
-    # plt.show()
+    # fig,axs = plt.subplots(2,1,figsize=(10,10))
+    # axs[0].semilogx(stds,MSEs)
+    # axs[1].semilogx(stds,BCEs)
+    # fig.show()
+    # print("stop")
+    
+    # results1 = run_scenario(0.1,"Heun",0)
+    # results2 = run_scenario(0.1,"Forward_Euler",0)
+    # plot.plot_two_scenarios(results1,results2)
 
+    st1 = time.process_time()
+    for i in range(10):
+        _ = run_scenario(0.1,"Heun",0)
+    et1 = time.process_time()
+    delta1 = et1-st1
 
+    st2 = time.process_time()
+    for i in range(10):
+        _ = run_scenario(0.1,"Forward_Euler",0)
+    et2 = time.process_time()
+    delta2 = et2-st2
+
+    print(delta1,delta2)
 
     print("stop")
+
+
 
 
     
