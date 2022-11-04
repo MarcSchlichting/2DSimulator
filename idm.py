@@ -4,8 +4,8 @@ import agents
 def idm_driver(w,car_ego,car1):
     #Model Parameters
     v_0 = car_ego.max_speed
-    s_0 = 1.5
-    T = 1.1
+    s_0 = 1.1
+    T = 1.0
     a = 1.5
     b = 1.5
     delta = 4
