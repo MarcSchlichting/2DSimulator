@@ -1,13 +1,13 @@
 import numpy as np
 import agents
 
-def idm_driver(w,car_ego,car1):
+def idm_driver(w,car_ego,car1,s_0,T,a,b):
     #Model Parameters
     v_0 = car_ego.max_speed
-    s_0 = 1.1
-    T = 1.0
-    a = 1.5
-    b = 1.5
+    s_0 =s_0 #1.1
+    T =T #1.0
+    a =a #1.5
+    b =b #1.5
     delta = 4
 
     #Helper Quantities

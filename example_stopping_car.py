@@ -1,5 +1,3 @@
-from asyncio import run
-from multiprocessing.context import SpawnProcess
 import numpy as np
 from world import World
 from agents import Car, RectangleBuilding, Pedestrian, Painting
@@ -11,7 +9,7 @@ import plot
 import time
 from ax.service.ax_client import AxClient
 
-def run_scenario(dt,integration_method,sensor_std):
+def run_scenario(dt,integration_method,sensor_std,idm_configuration={"ego_max_speed":10,"ego_max_break_acceleration":-1.5,"ego_initial_speed":3,"idm_T":1.0,"idm_a":1.5,"idm_b":1.5,"idm_s0":1.1}):
 
     dt = dt # time steps in terms of seconds. In other words, 1/dt is the FPS.
     w = World(dt, width = 120, height = 120, ppm = 6) # The world is 120 meters by 120 meters. ppm is the pixels per meter.
@@ -37,11 +35,11 @@ def run_scenario(dt,integration_method,sensor_std):
 
     c2 = Car(Point(110,90), np.pi)
     c2.integration_method = integration_method
-    c2.velocity = Point(20.0,0)
-    c2.max_speed = 10
-    c2.max_break_acceleration = -1.5
+    # c2.velocity = Point(20.0,0)
+    c2.max_speed =idm_configuration["ego_max_speed"] #10
+    c2.max_break_acceleration = idm_configuration["ego_max_break_acceleration"] #-1.5
     c2.position_sensor_std = sensor_std
-    c2.velocity = Point(3.0,0.)
+    c2.velocity = Point(idm_configuration["ego_initial_speed"],0.0) #Point(3.0,0.)
 
     w.add(c2)
 
@@ -68,7 +66,7 @@ def run_scenario(dt,integration_method,sensor_std):
             collision_list.append(False)
             t_list.append(k*dt)
 
-        c2.set_control(*idm_driver(w,c2,c1))
+        c2.set_control(*idm_driver(w,c2,c1,idm_configuration["idm_s0"],idm_configuration["idm_T"],idm_configuration["idm_a"],idm_configuration["idm_b"]))
         # All movable objects will keep their control the same as long as we don't change it.
         if k*dt >= 13.0:    #after 13s of simulation time 
             c1.set_control(0,-5.0)
@@ -190,10 +188,101 @@ def ax_search():
     print(best_parameters)
     print(values)
 
+def inner_loop_search(num_runs):
+    failures = []
+    failure_configs = []
+    non_failure_configs = []
+
+    for i in range(num_runs):
+        """
+        Parameters to search over:
+        ego_max_speed [5,20]
+        ego_max_break_acceleration [-4,-0.5]
+        ego_initial_speed [3,10]
+        idm_T [0.5,3]
+        idm_a [0.5,0.2]
+        idm_b [0.5,0.2]
+        idm_s0 [0,5]
+        """
+        sample_ego_max_speed = np.random.rand()*15 + 5
+        sample_ego_max_break_acceleration = np.random.rand()*3.5 - 4
+        sample_ego_initial_speed = np.random.rand()*7 + 3
+        sample_idm_T = np.random.rand()*1.5 + 0.5
+        sample_idm_a = np.random.rand()*1.5 + 0.5
+        sample_idm_b = np.random.rand()*1.5 + 0.5
+        sample_idm_s0 = np.random.rand()*5
+
+        config_dict = {"ego_max_speed":sample_ego_max_speed,
+                        "ego_max_break_acceleration":sample_ego_max_break_acceleration,
+                        "ego_initial_speed":sample_ego_initial_speed,
+                        "idm_T":sample_idm_T,
+                        "idm_a":sample_idm_a,
+                        "idm_b":sample_idm_b,
+                        "idm_s0":sample_idm_s0}
+        
+        result = run_scenario(0.1,"RK4",0.0,idm_configuration=config_dict)
+        failure = np.any(result["collision"])
+        print(f"Run {i+1}/{num_runs} - Collision found: {failure}")
+        if failure:
+            failures.append(result)
+            failure_configs.append(config_dict)
+        else:
+            non_failure_configs.append(config_dict)
+    print("stop")
+    ego_max_speed_failures = [f["ego_max_speed"] for f in failure_configs]
+    ego_max_speed_non_failures = [f["ego_max_speed"] for f in non_failure_configs]
+    ego_max_break_acceleration_failures = [f["ego_max_break_acceleration"] for f in failure_configs]
+    ego_max_break_acceleration_non_failures = [f["ego_max_break_acceleration"] for f in non_failure_configs]
+    ego_initial_speed_failures = [f["ego_initial_speed"] for f in failure_configs]
+    ego_initial_speed_non_failures = [f["ego_initial_speed"] for f in non_failure_configs]
+    idm_T_failures = [f["idm_T"] for f in failure_configs]
+    idm_T_non_failures = [f["idm_T"] for f in non_failure_configs]
+    idm_a_failures = [f["idm_a"] for f in failure_configs]
+    idm_a_non_failures = [f["idm_a"] for f in non_failure_configs]
+    idm_b_failures = [f["idm_b"] for f in failure_configs]
+    idm_b_non_failures = [f["idm_b"] for f in non_failure_configs]
+    idm_s0_failures = [f["idm_s0"] for f in failure_configs]
+    idm_s0_non_failures = [f["idm_s0"] for f in non_failure_configs]
+
+    N_bins = 10
+    fig,axs = plt.subplots(1,7,figsize=(25,5))
+    axs[0].hist(ego_max_speed_non_failures,bins=N_bins,color=(0,0.8,0.2),alpha=0.5)
+    axs[0].hist(ego_max_speed_failures,bins=N_bins,color=(1,0,0),alpha=0.5)
+    axs[0].set_title("Ego Max Speed")
+
+    axs[1].hist(ego_max_break_acceleration_non_failures,bins=N_bins,color=(0,0.8,0.2),alpha=0.5)
+    axs[1].hist(ego_max_break_acceleration_failures,bins=N_bins,color=(1,0,0),alpha=0.5)
+    axs[1].set_title("Ego Max Break Acceleration")
+
+    axs[2].hist(ego_initial_speed_non_failures,bins=N_bins,color=(0,0.8,0.2),alpha=0.5)
+    axs[2].hist(ego_initial_speed_failures,bins=N_bins,color=(1,0,0),alpha=0.5)
+    axs[2].set_title("Ego Initial Speed")
+
+    axs[3].hist(idm_T_non_failures,bins=N_bins,color=(0,0.8,0.2),alpha=0.5)
+    axs[3].hist(idm_T_failures,bins=N_bins,color=(1,0,0),alpha=0.5)
+    axs[3].set_title("IDM T")
+
+    axs[4].hist(idm_a_non_failures,bins=N_bins,color=(0,0.8,0.2),alpha=0.5)
+    axs[4].hist(idm_a_failures,bins=N_bins,color=(1,0,0),alpha=0.5)
+    axs[4].set_title("IDM a")
+
+    axs[5].hist(idm_b_non_failures,bins=N_bins,color=(0,0.8,0.2),alpha=0.5)
+    axs[5].hist(idm_b_failures,bins=N_bins,color=(1,0,0),alpha=0.5)
+    axs[5].set_title("IDM b")
+
+    axs[6].hist(idm_s0_non_failures,bins=N_bins,color=(0,0.8,0.2),alpha=0.5)
+    axs[6].hist(idm_s0_failures,bins=N_bins,color=(1,0,0),alpha=0.5)
+    axs[6].set_title("IDM s0")
+    
+    fig.tight_layout()
+    fig.savefig("MC_inner_loop_hist.png",dpi=600)
+    fig.show()
+    print("stop")
 
 if __name__=="__main__":
     import matplotlib.pyplot as plt
-    ax_search()
+    # ax_search()
+    inner_loop_search(1000)
 
     # #compare against standard case dt=0.1
     # MSEs = []
@@ -272,7 +361,7 @@ if __name__=="__main__":
     # plot.plot_two_scenarios(results1,results2)
 
     # #compare Euler and RK4
-    # results1 = run_scenario(0.1,"Forward_Euler",0)
+    results1 = run_scenario(0.1,"Forward_Euler",0)
     # results2 = run_scenario(0.1,"Forward_Euler",2.0)
     # plot.plot_two_scenarios(results1,results2, "std=0.0", "std=1.0")
 
