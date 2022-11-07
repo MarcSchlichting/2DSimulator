@@ -200,8 +200,8 @@ def inner_loop_search(num_runs):
         ego_max_break_acceleration [-4,-0.5]
         ego_initial_speed [3,10]
         idm_T [0.5,3]
-        idm_a [0.5,0.2]
-        idm_b [0.5,0.2]
+        idm_a [0.5,2.0]
+        idm_b [0.5,2.0]
         idm_s0 [0,5]
         """
         sample_ego_max_speed = np.random.rand()*15 + 5
