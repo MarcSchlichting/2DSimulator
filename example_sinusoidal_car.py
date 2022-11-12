@@ -10,7 +10,7 @@ import time
 from ax.service.ax_client import AxClient
 import math
 import time
-from multiprocessing import Pool
+from mpire import WorkerPool
 
 class SinusoidalCarScenario(object):
     def __init__(self) -> None:
@@ -191,18 +191,17 @@ class SinusoidalCarScenario(object):
         failure_configs = []
         non_failure_configs = []
 
+        with WorkerPool(n_jobs=num_processes) as pool:
 
-        # with Pool(processes=num_processes) as pool:
+            for result in pool.imap(self.inner_loop_one_step, num_trials * [(simulation_configuration,)],progress_bar=True):
+            # result = self.inner_loop_one_step()
 
-        #     for result in pool.imap(self.inner_loop_one_step, num_trials * [simulation_configuration]):
-        #     # result = self.inner_loop_one_step()
-
-        #         if result[0] is not None:
-        #             failures.append(result[0])
-        #         if result[1] is not None:
-        #             failure_configs.append(result[1])
-        #         if result[2] is not None:
-        #             non_failure_configs.append(result[2])
+                if result[0] is not None:
+                    failures.append(result[0])
+                if result[1] is not None:
+                    failure_configs.append(result[1])
+                if result[2] is not None:
+                    non_failure_configs.append(result[2])
         
 
         for i in range(num_trials):
@@ -544,7 +543,7 @@ if __name__=="__main__":
     import matplotlib.pyplot as plt
     # ax_search()
     scenario = SinusoidalCarScenario()
-    failure, failure_configs, non_failure_configs = scenario.inner_loop_mc({"dt":0.1,"integration_method":"RK4","sensor_std":0.0},5000)
+    failure, failure_configs, non_failure_configs = scenario.inner_loop_mc({"dt":0.1,"integration_method":"RK4","sensor_std":0.0},5000,num_processes=20)
     scenario.plot_inner_loop_results(failure_configs,non_failure_configs)
     # scenario.run(scenario.scenario_configuration,{"dt":0.1,"integration_method":"RK4","sensor_std":0.0},render=True)
 
