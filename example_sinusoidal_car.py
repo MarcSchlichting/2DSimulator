@@ -169,7 +169,7 @@ class SinusoidalCarScenario(object):
         result = self.run(sampled_scenario_config,simulation_configuration)
         
         failure = np.any(result["collision"])
-        # print(f"Collision found: {failure}")
+        print(f"Collision found: {failure}")
         if failure:
             return result,sampled_scenario_config,None
         else:
@@ -206,6 +206,7 @@ class SinusoidalCarScenario(object):
         
 
         for i in range(num_trials):
+            print(i)
             result = self.inner_loop_one_step(simulation_configuration)
 
             if result[0] is not None:
