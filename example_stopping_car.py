@@ -10,6 +10,7 @@ import time
 from ax.service.ax_client import AxClient
 import math
 import time
+from multiprocessing import Pool
 
 class StoppingCarScenario(object):
     def __init__(self) -> None:
