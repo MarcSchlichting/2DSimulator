@@ -10,16 +10,19 @@ import time
 from ax.service.ax_client import AxClient
 import math
 import time
+from multiprocessing import Pool
 
-class StoppingCarScenario(object):
+class SinusoidalCarScenario(object):
     def __init__(self) -> None:
         #default configuration for inner loop
         self.scenario_configuration = {"ego_max_speed":10,
-                                    "ego_max_break_acceleration":-1.5,
+                                    "ego_max_break_acceleration":-0.8,
                                     "ego_initial_speed":3.0,
-                                    "lead_car_initial_speed":2.8,
-                                    "lead_car_stop_time":13.0,
-                                    "lead_car_break_acceleration":-5.0,
+                                    "lead_car_initial_speed":3.0,
+                                    "lead_car_max_speed":10.0,
+                                    "lead_car_acc":2.0,
+                                    "lead_car_break_acc":-8.0,
+                                    "lead_car_osc_period":5,
                                     "idm_T":1.0,
                                     "idm_a":1.5,
                                     "idm_b":1.5,
@@ -30,8 +33,10 @@ class StoppingCarScenario(object):
                                     "ego_max_break_acceleration":{"type":"range", "values":[-4,-0.5]},
                                     "ego_initial_speed":{"type":"range", "values":[3,10]},
                                     "lead_car_initial_speed":{"type":"range","values":[1.0,5.0]},
-                                    "lead_car_stop_time":{"type":"range","values":[3.0,14.0]},
-                                    "lead_car_break_acceleration":{"type":"range","values":[-8.0,-4.0]},
+                                    "lead_car_max_speed":{"type":"range","values":[5.0,15.0]},
+                                    "lead_car_acc":{"type":"range","values":[0.5,10.0]},
+                                    "lead_car_break_acc":{"type":"range","values":[-10.0,-4.0]},
+                                    "lead_car_osc_period":{"type":"range","values":[1.0,7.0]},
                                     "idm_T":{"type":"range", "values":[0.5,3.0]},
                                     "idm_a":{"type":"range", "values":[0.5,2.0]},
                                     "idm_b":{"type":"range", "values":[0.5,2.0]},
@@ -84,9 +89,10 @@ class StoppingCarScenario(object):
 
         # The lead car
         c1= Car(Point(80,90), np.pi, 'blue')
-        c1.velocity = Point(scenario_configuration["lead_car_initial_speed"],0.0) # We can also specify an initial velocity just like this.
+        c1.velocity = Point(scenario_configuration["lead_car_initial_speed"],0.0) 
         c1.integration_method = simulation_configuration["integration_method"]
-        c1.max_break_acceleration = scenario_configuration["lead_car_break_acceleration"]
+        c1.max_speed = scenario_configuration["lead_car_max_speed"] 
+        c1.max_break_acceleration = scenario_configuration["lead_car_break_acc"]
         w.add(c1)
 
         c2 = Car(Point(110,90), np.pi)
@@ -94,9 +100,12 @@ class StoppingCarScenario(object):
         c2.max_speed = scenario_configuration["ego_max_speed"] #10
         c2.max_break_acceleration = scenario_configuration["ego_max_break_acceleration"] #-1.5
         c2.position_sensor_std = simulation_configuration["sensor_std"]
-        c2.velocity = Point(scenario_configuration["ego_initial_speed"],0.0) #Point(3.0,0.)
-
+        c2.velocity = Point(scenario_configuration["ego_initial_speed"],0.0) #Point(3.0,0.0)
         w.add(c2)
+
+        c_inf = Car(Point(-10000,90),np.pi)
+        c_inf.integration_method = simulation_configuration["integration_method"]
+        w.add(c_inf)
 
         #datalogs
         x_pos_list = []
@@ -118,9 +127,15 @@ class StoppingCarScenario(object):
                 t_list.append(k*dt)
 
             c2.set_control(*idm_driver(w,c2,c1,scenario_configuration["idm_s0"],scenario_configuration["idm_T"],scenario_configuration["idm_a"],scenario_configuration["idm_b"]))
- 
-            if k*dt >= scenario_configuration["lead_car_stop_time"]:
-                c1.set_control(0,scenario_configuration["lead_car_break_acceleration"])
+            
+            if math.sin(2*math.pi/scenario_configuration["lead_car_osc_period"]*k*simulation_configuration["dt"]) > 0:
+                c1_control = (0,scenario_configuration["lead_car_acc"])
+            else:
+                c1_control = (0,scenario_configuration["lead_car_break_acc"])
+            
+
+            c1.set_control(*c1_control)
+            
             w.tick() 
             if render:
                 w.render()
@@ -147,20 +162,20 @@ class StoppingCarScenario(object):
         w.close()
 
         return results_dict
-
+    
     def inner_loop_one_step(self,simulation_configuration):
         sampled_scenario_config = self.sample_scenario_configuration()
             
         result = self.run(sampled_scenario_config,simulation_configuration)
         
         failure = np.any(result["collision"])
-        print(f"Collision found: {failure}")
+        # print(f"Collision found: {failure}")
         if failure:
             return result,sampled_scenario_config,None
         else:
             return None,None,sampled_scenario_config
 
-    def inner_loop_mc(self,simulation_configuration,num_trials,num_processes=20):
+    def inner_loop_mc(self,simulation_configuration,num_trials,num_processes=1):
         """Random trials for values sampled from the inner loop.
 
         Args:
@@ -215,7 +230,7 @@ class StoppingCarScenario(object):
             axs[i].set_title(scenario_parameters[i])
        
         fig.tight_layout()
-        fig.savefig(f"MC_inner_loop_hist_{int(time.time())}.png",dpi=600)
+        fig.savefig(f"MC_inner_loop_hist_sinusoidal_{int(time.time())}.png",dpi=600)
         # fig.show()
         print("stop")
 
@@ -516,9 +531,10 @@ class StoppingCarScenario(object):
 if __name__=="__main__":
     import matplotlib.pyplot as plt
     # ax_search()
-    scenario = StoppingCarScenario()
-    failures, failure_configs, non_failure_configs = scenario.inner_loop_mc({"dt":0.1,"integration_method":"RK4","sensor_std":0.0},5000)
-    scenario.plot_inner_loop_results(failure_configs, non_failure_configs)
+    scenario = SinusoidalCarScenario()
+    failure, failure_configs, non_failure_configs = scenario.inner_loop_mc({"dt":0.1,"integration_method":"RK4","sensor_std":0.0},10)
+    scenario.plot_inner_loop_results(failure_configs,non_failure_configs)
+    # scenario.run(scenario.scenario_configuration,{"dt":0.1,"integration_method":"RK4","sensor_std":0.0},render=True)
 
     # #compare against standard case dt=0.1
     # MSEs = []
