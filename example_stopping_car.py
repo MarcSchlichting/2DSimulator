@@ -503,7 +503,7 @@ if __name__=="__main__":
     import matplotlib.pyplot as plt
     # ax_search()
     scenario = StoppingCarScenario()
-    failures, failure_configs, non_failure_configs = scenario.inner_loop_mc({"dt":0.1,"integration_method":"RK4","sensor_std":0.0},10)
+    failures, failure_configs, non_failure_configs = scenario.inner_loop_mc({"dt":0.1,"integration_method":"RK4","sensor_std":0.0},5000)
     scenario.plot_inner_loop_results(failure_configs, non_failure_configs)
 
     # #compare against standard case dt=0.1
