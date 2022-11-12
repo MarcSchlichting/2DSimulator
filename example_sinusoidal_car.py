@@ -543,7 +543,7 @@ if __name__=="__main__":
     import matplotlib.pyplot as plt
     # ax_search()
     scenario = SinusoidalCarScenario()
-    failure, failure_configs, non_failure_configs = scenario.inner_loop_mc({"dt":0.1,"integration_method":"RK4","sensor_std":0.0},5000,num_processes=20)
+    failure, failure_configs, non_failure_configs = scenario.inner_loop_mc({"dt":0.1,"integration_method":"RK4","sensor_std":0.0},5000,num_processes=8)
     scenario.plot_inner_loop_results(failure_configs,non_failure_configs)
     # scenario.run(scenario.scenario_configuration,{"dt":0.1,"integration_method":"RK4","sensor_std":0.0},render=True)
 
