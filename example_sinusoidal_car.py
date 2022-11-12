@@ -206,7 +206,7 @@ class SinusoidalCarScenario(object):
         
 
         for i in range(num_trials):
-            result = self.inner_loop_one_step()
+            result = self.inner_loop_one_step(simulation_configuration)
 
             if result[0] is not None:
                 failures.append(result[0])
