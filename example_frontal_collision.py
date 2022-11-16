@@ -31,20 +31,20 @@ class FrontalCollisionScenario(object):
                                     "other_idm_s0":3.1}
 
         #define the type for each of the variables
-        self.scenario_configuration_domain = {"ego_max_speed":{"type":"range", "values":[3,10]},
+        self.scenario_configuration_domain = {"ego_max_speed":{"type":"range", "values":[2,5]},
                                     "ego_max_break_acceleration":{"type":"range", "values":[-4,-0.5]},
-                                    "ego_initial_speed":{"type":"range", "values":[3,10]},
-                                    "idm_T":{"type":"range", "values":[0.5,3.0]},
+                                    "ego_initial_speed":{"type":"range", "values":[2,5]},
+                                    "idm_T":{"type":"range", "values":[1.5,5.0]},
                                     "idm_a":{"type":"range", "values":[0.5,2.0]},
-                                    "idm_b":{"type":"range", "values":[0.5,2.0]},
-                                    "idm_s0":{"type":"range", "values":[0.0,5.0]},
-                                    "other_max_speed":{"type":"range", "values":[3,10]},
+                                    "idm_b":{"type":"range", "values":[1.5,4.0]},
+                                    "idm_s0":{"type":"range", "values":[2.0,5.0]},
+                                    "other_max_speed":{"type":"range", "values":[2,5]},
                                     "other_max_break_acceleration":{"type":"range", "values":[-4,-0.5]},
-                                    "other_initial_speed":{"type":"range", "values":[3,10]},
-                                    "other_idm_T":{"type":"range", "values":[0.5,3.0]},
+                                    "other_initial_speed":{"type":"range", "values":[2,5]},
+                                    "other_idm_T":{"type":"range", "values":[1.5,5.0]},
                                     "other_idm_a":{"type":"range", "values":[0.5,2.0]},
-                                    "other_idm_b":{"type":"range", "values":[0.5,2.0]},
-                                    "other_idm_s0":{"type":"range", "values":[0.0,5.0]}}
+                                    "other_idm_b":{"type":"range", "values":[1.5,4.0]},
+                                    "other_idm_s0":{"type":"range", "values":[2.0,5.0]}}
     
     def sample_scenario_configuration(self):
         """Method that randomly samples from all the possible scenario configurations.
@@ -202,6 +202,7 @@ class FrontalCollisionScenario(object):
         
 
         for i in range(num_trials):
+            print(i)
             result = self.inner_loop_one_step(simulation_configuration)
 
             if result[0] is not None:
