@@ -74,10 +74,18 @@ class Entity:
                 #check for negative speed
                 # new_speed = np.dot(np.array([np.cos(heading),np.sin(heading)]),z_new[2:])
 
-                if z_new[0]>self.center.x:
+                #new condition, speed small and negative acc
+                prelim_velocity = Point(np.cos(-self.heading) * z_new[2],-np.sin(self.heading) * z_new[3])
+                prelim_speed = np.sqrt(prelim_velocity.x**2 + prelim_velocity.y**2)
+                if prelim_speed < 0:
                     z_new[:2] = np.array([self.center.x, self.center.y])
                     z_new[2:] = np.zeros((2,))
                     self.heading = heading
+
+                # if z_new[0]>self.center.x:
+                #     z_new[:2] = np.array([self.center.x, self.center.y])
+                #     z_new[2:] = np.zeros((2,))
+                #     self.heading = heading
                 else:
                     self.heading = np.mod(np.arctan2(z_new[3],z_new[2]),2 * np.pi)
 
