@@ -78,14 +78,14 @@ def batch_compare_trajectories(trajectories):
 
 
 if __name__=="__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-im",type=str, choices=["Forward_Euler", "RK2", "RK4"])
-    args = parser.parse_args()
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument("-im",type=str, choices=["Forward_Euler", "RK2", "RK4"])
+    # args = parser.parse_args()
 
     scenarios = [StoppingCarScenario(),OrthogonalIntersectionScenario(),FrontalCollisionScenario(),SinusoidalCarScenario()]
     hf_simulation_config = {"dt":0.1,"integration_method":"RK4","sensor_std":0.0}
 
-    im = args.im
+    im = "RK4"
     print("INTEGRATION METHOD:",im)
     mse_all = []
     for dt in np.linspace(0.1,1.5,20):
