@@ -86,6 +86,7 @@ if __name__=="__main__":
     hf_simulation_config = {"dt":0.1,"integration_method":"RK4","sensor_std":0.0}
 
     im = args.im
+    print("INTEGRATION METHOD:",im)
     mse_all = []
     for dt in np.linspace(0.1,1.5,20):
         print("CURRENT DT: ",dt)
