@@ -10,7 +10,7 @@ import time
 from ax.service.ax_client import AxClient
 import math
 import time
-from mpire import WorkerPool
+# from mpire import WorkerPool
 
 class SinusoidalCarScenario(object):
     def __init__(self) -> None:
