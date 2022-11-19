@@ -12,7 +12,7 @@ import math
 import time
 from mpire import WorkerPool
 
-class OthogonalIntersectionScenario(object):
+class OrthogonalIntersectionScenario(object):
     def __init__(self) -> None:
         #default configuration for inner loop
         self.scenario_configuration = {"ego_max_speed":10,
