@@ -78,7 +78,8 @@ class Entity:
                 # prelim_velocity = Point(np.cos(-self.heading) * z_new[2],-np.sin(self.heading) * z_new[3])
                 # prelim_speed = np.sqrt(prelim_velocity.x**2 + prelim_velocity.y**2)
                 preliminary_heading = np.mod(np.arctan2(z_new[3],z_new[2]),2 * np.pi)
-                if np.abs(preliminary_heading-self.heading) > 0.5:
+                preliminary_velocity = Point(np.cos(-self.heading) * z_new[2],-np.sin(self.heading) * z_new[3]) # in body frame
+                if np.logical_or(preliminary_velocity.x < 0,np.abs(preliminary_heading-self.heading)>0.05):
                     z_new[:2] = np.array([self.center.x, self.center.y])
                     z_new[2:] = np.zeros((2,))
                     self.heading = heading
@@ -121,7 +122,8 @@ class Entity:
                 # new_speed = np.dot(np.array([np.cos(heading),np.sin(heading)]),z_new[2:])
                 
                 preliminary_heading = np.mod(np.arctan2(z_new[3],z_new[2]),2 * np.pi)
-                if np.abs(preliminary_heading-self.heading) > 0.5:
+                preliminary_velocity = Point(np.cos(-self.heading) * z_new[2],-np.sin(self.heading) * z_new[3]) # in body frame
+                if np.logical_or(preliminary_velocity.x < 0,np.abs(preliminary_heading-self.heading)>0.05):
                     z_new[:2] = np.array([self.center.x, self.center.y])
                     z_new[2:] = np.zeros((2,))
                     self.heading = heading
@@ -131,13 +133,14 @@ class Entity:
                 #     z_new[2:] = np.zeros((2,))
                 #     self.heading = heading
                 else:
+                    # self.heading = np.mod(np.arctan2(z_new[3],z_new[2]),2 * np.pi)
                     self.heading = np.mod(np.arctan2(z_new[3],z_new[2]),2 * np.pi)
 
-                self.center = Point(z_new[0],z_new[1])
-                self.velocity = Point(np.cos(-self.heading) * z_new[2],-np.sin(self.heading) * z_new[3]) # in body frame
+                # self.center = Point(z_new[0],z_new[1])
+                # self.velocity = Point(np.cos(-self.heading) * z_new[2],-np.sin(self.heading) * z_new[3]) # in body frame
 
                 self.center = Point(z_new[0],z_new[1])
-                self.heading = np.mod(np.arctan2(z_new[3],z_new[2]),2 * np.pi)
+                # self.heading = np.mod(np.arctan2(z_new[3],z_new[2]),2 * np.pi)
                 self.velocity = Point(np.cos(-self.heading) * z_new[2],-np.sin(self.heading) * z_new[3]) # in body frame
                 
                 self.acceleration = acc_abs
