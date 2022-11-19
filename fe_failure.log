@@ -1,0 +1,2326 @@
+INTEGRATION METHOD: Forward_Euler
+CURRENT DT:  0.1
+CURRENT S_STD:  0.0
+  0%|          | 0/4 [00:00<?, ?it/s]/home/mschl/2DSimulator/entities.py:63: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:63: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:55: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:55: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:61: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:61: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:64: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+/home/mschl/2DSimulator/example_stopping_car.py:143: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:41<05:03, 101.00s/it]/home/mschl/2DSimulator/example_intersection.py:149: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:42<02:35, 77.89s/it] /home/mschl/2DSimulator/example_frontal_collision.py:154: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [08:07<03:10, 190.84s/it]/home/mschl/2DSimulator/example_sinusoidal_car.py:157: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [13:39<00:00, 246.41s/it]100%|██████████| 4/4 [13:39<00:00, 204.89s/it]
+CURRENT S_STD:  0.10526315789473684
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:30<04:32, 90.86s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:55<02:54, 87.13s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [11:17<04:36, 276.54s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [18:39<00:00, 341.91s/it]100%|██████████| 4/4 [18:39<00:00, 279.86s/it]
+CURRENT S_STD:  0.21052631578947367
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:40<05:01, 100.34s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:29<02:20, 70.16s/it] Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [09:01<03:37, 217.30s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [14:47<00:00, 268.18s/it]100%|██████████| 4/4 [14:47<00:00, 221.99s/it]
+CURRENT S_STD:  0.3157894736842105
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:17<03:51, 77.27s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:29<02:28, 74.33s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [09:17<03:46, 226.78s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [13:01<00:00, 225.42s/it]100%|██████████| 4/4 [13:01<00:00, 195.27s/it]
+CURRENT S_STD:  0.42105263157894735
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:54<02:44, 54.99s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:30<02:37, 78.79s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [10:10<04:13, 253.00s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [15:18<00:00, 274.53s/it]100%|██████████| 4/4 [15:18<00:00, 229.57s/it]
+CURRENT S_STD:  0.5263157894736842
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:52<02:38, 52.78s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:41<01:40, 50.45s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [07:34<03:08, 188.33s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [13:07<00:00, 245.67s/it]100%|██████████| 4/4 [13:07<00:00, 196.89s/it]
+CURRENT S_STD:  0.631578947368421
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:34<01:42, 34.25s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:49<01:56, 58.32s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [07:35<03:09, 189.59s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [11:29<00:00, 207.13s/it]100%|██████████| 4/4 [11:29<00:00, 172.31s/it]
+CURRENT S_STD:  0.7368421052631579
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:42<05:08, 102.84s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:59<02:55, 87.54s/it] Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [11:25<04:38, 278.63s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [16:57<00:00, 299.78s/it]100%|██████████| 4/4 [16:57<00:00, 254.48s/it]
+CURRENT S_STD:  0.8421052631578947
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:00<03:02, 60.74s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:03<02:03, 61.65s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [08:47<03:38, 218.38s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [13:59<00:00, 255.14s/it]100%|██████████| 4/4 [13:59<00:00, 209.85s/it]
+CURRENT S_STD:  0.9473684210526315
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:56<02:49, 56.57s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:16<02:20, 70.24s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [11:11<04:42, 282.36s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [19:01<00:00, 356.41s/it]100%|██████████| 4/4 [19:01<00:00, 285.27s/it]
+CURRENT S_STD:  1.0526315789473684
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:41<02:03, 41.09s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:00<02:07, 63.83s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [11:13<04:46, 286.85s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [19:21<00:00, 366.36s/it]100%|██████████| 4/4 [19:21<00:00, 290.33s/it]
+CURRENT S_STD:  1.1578947368421053
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:52<02:37, 52.50s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:41<01:41, 50.57s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [08:46<03:41, 221.57s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [14:06<00:00, 260.18s/it]100%|██████████| 4/4 [14:06<00:00, 211.54s/it]
+CURRENT S_STD:  1.263157894736842
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:04<03:13, 64.62s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:59<01:58, 59.04s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [07:51<03:12, 192.61s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [13:56<00:00, 260.88s/it]100%|██████████| 4/4 [13:56<00:00, 209.21s/it]
+CURRENT S_STD:  1.3684210526315788
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:56<02:50, 56.83s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:00<02:02, 61.03s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [09:26<03:56, 236.74s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [13:44<00:00, 245.09s/it]100%|██████████| 4/4 [13:44<00:00, 206.13s/it]
+CURRENT S_STD:  1.4736842105263157
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:10<03:32, 70.94s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:39<02:42, 81.42s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [09:01<03:38, 218.68s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [17:07<00:00, 323.98s/it]100%|██████████| 4/4 [17:07<00:00, 256.78s/it]
+CURRENT S_STD:  1.5789473684210527
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:45<02:17, 45.68s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:51<01:55, 57.51s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [07:58<03:18, 198.88s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [15:35<00:00, 300.79s/it]100%|██████████| 4/4 [15:35<00:00, 233.90s/it]
+CURRENT S_STD:  1.6842105263157894
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:58<02:54, 58.02s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:15<02:18, 69.43s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [10:00<04:10, 250.17s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [16:37<00:00, 308.24s/it]100%|██████████| 4/4 [16:37<00:00, 249.49s/it]
+CURRENT S_STD:  1.789473684210526
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:36<01:49, 36.60s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:01<02:09, 64.75s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [07:00<02:51, 171.69s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [13:04<00:00, 247.72s/it]100%|██████████| 4/4 [13:04<00:00, 196.07s/it]
+CURRENT S_STD:  1.894736842105263
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:39<01:57, 39.01s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:29<01:31, 45.61s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [06:22<02:38, 158.85s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [10:56<00:00, 204.19s/it]100%|██████████| 4/4 [10:56<00:00, 164.14s/it]
+CURRENT S_STD:  2.0
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:32<01:37, 32.36s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:14<01:16, 38.02s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [06:15<02:38, 158.17s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [11:49<00:00, 227.43s/it]100%|██████████| 4/4 [11:49<00:00, 177.27s/it]
+CURRENT DT:  0.17368421052631577
+CURRENT S_STD:  0.0
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:08<03:26, 68.77s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:03<02:01, 60.72s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [14:14<06:06, 366.48s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [19:05<00:00, 336.82s/it]100%|██████████| 4/4 [19:05<00:00, 286.39s/it]
+CURRENT S_STD:  0.10526315789473684
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:25<04:17, 85.89s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:26<02:21, 70.84s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [07:25<02:55, 175.39s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [13:41<00:00, 254.35s/it]100%|██████████| 4/4 [13:41<00:00, 205.35s/it]
+CURRENT S_STD:  0.21052631578947367
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:11<03:34, 71.44s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:05<02:02, 61.23s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [05:57<02:19, 139.02s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [10:33<00:00, 193.05s/it]100%|██████████| 4/4 [10:33<00:00, 158.25s/it]
+CURRENT S_STD:  0.3157894736842105
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:21<04:05, 81.84s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:19<02:15, 67.68s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [08:37<03:29, 209.32s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [14:40<00:00, 270.18s/it]100%|██████████| 4/4 [14:40<00:00, 220.24s/it]
+CURRENT S_STD:  0.42105263157894735
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:06<03:18, 66.12s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:51<01:47, 53.72s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [08:56<03:43, 223.29s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [14:20<00:00, 262.98s/it]100%|██████████| 4/4 [14:20<00:00, 215.02s/it]
+CURRENT S_STD:  0.5263157894736842
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:03<03:10, 63.47s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:07<02:07, 63.81s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [09:58<04:09, 249.64s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [15:15<00:00, 276.25s/it]100%|██████████| 4/4 [15:15<00:00, 228.84s/it]
+CURRENT S_STD:  0.631578947368421
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:45<02:15, 45.12s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:35<01:36, 48.11s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [06:06<02:29, 149.79s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [12:18<00:00, 237.75s/it]100%|██████████| 4/4 [12:18<00:00, 184.68s/it]
+CURRENT S_STD:  0.7368421052631579
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:30<01:32, 30.78s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:23<01:27, 43.57s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [09:42<04:11, 251.40s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [12:44<00:00, 224.19s/it]100%|██████████| 4/4 [12:44<00:00, 191.12s/it]
+CURRENT S_STD:  0.8421052631578947
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:57<02:52, 57.52s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:51<01:50, 55.34s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [07:11<02:56, 176.11s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [11:57<00:00, 219.54s/it]100%|██████████| 4/4 [11:57<00:00, 179.32s/it]
+CURRENT S_STD:  0.9473684210526315
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:43<02:11, 43.95s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:17<01:15, 37.63s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [09:52<04:15, 255.55s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [12:36<00:00, 219.73s/it]100%|██████████| 4/4 [12:36<00:00, 189.21s/it]
+CURRENT S_STD:  1.0526315789473684
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:37<01:51, 37.06s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:18<01:19, 39.89s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [09:17<04:00, 240.20s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [12:14<00:00, 215.35s/it]100%|██████████| 4/4 [12:14<00:00, 183.69s/it]
+CURRENT S_STD:  1.1578947368421053
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:09<03:27, 69.20s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:33<01:25, 42.77s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [07:43<03:12, 192.10s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [13:05<00:00, 243.55s/it]100%|██████████| 4/4 [13:05<00:00, 196.43s/it]
+CURRENT S_STD:  1.263157894736842
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:42<02:07, 42.41s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:31<01:32, 46.46s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [07:06<02:58, 178.26s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [11:14<00:00, 205.60s/it]100%|██████████| 4/4 [11:14<00:00, 168.58s/it]
+CURRENT S_STD:  1.3684210526315788
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:36<01:48, 36.20s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:30<01:33, 46.62s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [06:59<02:55, 175.86s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [09:57<00:00, 176.66s/it]100%|██████████| 4/4 [09:57<00:00, 149.41s/it]
+CURRENT S_STD:  1.4736842105263157
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:50<02:30, 50.02s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:29<01:27, 43.69s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [04:59<01:59, 119.59s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [10:11<00:00, 195.75s/it]100%|██████████| 4/4 [10:11<00:00, 152.93s/it]
+CURRENT S_STD:  1.5789473684210527
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:35<01:46, 35.38s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:20<02:33, 76.68s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [09:38<04:01, 241.64s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [13:42<00:00, 242.37s/it]100%|██████████| 4/4 [13:42<00:00, 205.60s/it]
+CURRENT S_STD:  1.6842105263157894
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:33<01:40, 33.59s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:42<01:48, 54.41s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [06:45<02:47, 167.88s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [12:12<00:00, 230.54s/it]100%|██████████| 4/4 [12:12<00:00, 183.02s/it]
+CURRENT S_STD:  1.789473684210526
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:26<01:19, 26.61s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:31<01:38, 49.20s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [07:51<03:20, 200.38s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [13:06<00:00, 245.31s/it]100%|██████████| 4/4 [13:06<00:00, 196.52s/it]
+CURRENT S_STD:  1.894736842105263
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:36<01:48, 36.23s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:41<01:46, 53.13s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [07:42<03:13, 193.89s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [11:57<00:00, 218.07s/it]100%|██████████| 4/4 [11:57<00:00, 179.43s/it]
+CURRENT S_STD:  2.0
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:35<01:46, 35.52s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:19<01:21, 40.74s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [07:02<02:58, 178.49s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [10:25<00:00, 188.20s/it]100%|██████████| 4/4 [10:25<00:00, 156.35s/it]
+CURRENT DT:  0.24736842105263157
+CURRENT S_STD:  0.0
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:58<02:54, 58.02s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:54<01:54, 57.03s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [07:42<03:10, 190.18s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [11:15<00:00, 198.93s/it]100%|██████████| 4/4 [11:15<00:00, 168.83s/it]
+CURRENT S_STD:  0.10526315789473684
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:22<04:07, 82.54s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:37<02:36, 78.12s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [14:00<05:54, 354.15s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [21:35<00:00, 394.18s/it]100%|██████████| 4/4 [21:35<00:00, 323.94s/it]
+CURRENT S_STD:  0.21052631578947367
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:05<03:16, 65.34s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:07<02:06, 63.30s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [08:06<03:18, 198.35s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [12:27<00:00, 223.08s/it]100%|██████████| 4/4 [12:27<00:00, 186.82s/it]
+CURRENT S_STD:  0.3157894736842105
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:40<02:01, 40.66s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:44<01:49, 54.57s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [05:50<02:21, 141.86s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [12:55<00:00, 253.64s/it]100%|██████████| 4/4 [12:55<00:00, 193.93s/it]
+CURRENT S_STD:  0.42105263157894735
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:47<02:21, 47.24s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:23<01:22, 41.03s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [04:02<01:34, 94.90s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [07:38<00:00, 142.48s/it]100%|██████████| 4/4 [07:38<00:00, 114.59s/it]
+CURRENT S_STD:  0.5263157894736842
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:13<03:40, 73.47s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:21<02:20, 70.40s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [10:02<04:08, 248.52s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [15:32<00:00, 280.72s/it]100%|██████████| 4/4 [15:32<00:00, 233.07s/it]
+CURRENT S_STD:  0.631578947368421
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:30<01:30, 30.12s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:50<01:59, 59.92s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [05:04<02:00, 120.74s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [13:15<00:00, 267.16s/it]100%|██████████| 4/4 [13:15<00:00, 198.91s/it]
+CURRENT S_STD:  0.7368421052631579
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:05<03:16, 65.36s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:21<02:22, 71.48s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [07:24<02:57, 177.59s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [13:21<00:00, 248.06s/it]100%|██████████| 4/4 [13:21<00:00, 200.27s/it]
+CURRENT S_STD:  0.8421052631578947
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:43<02:09, 43.01s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:37<01:39, 49.91s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [05:18<02:07, 127.89s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [09:49<00:00, 184.23s/it]100%|██████████| 4/4 [09:49<00:00, 147.26s/it]
+CURRENT S_STD:  0.9473684210526315
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:40<02:01, 40.49s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:17<01:16, 38.19s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [04:25<01:46, 106.61s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [06:13<00:00, 107.39s/it]100%|██████████| 4/4 [06:13<00:00, 93.42s/it] 
+CURRENT S_STD:  1.0526315789473684
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [01:01<03:04, 61.41s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [02:04<02:05, 62.58s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [05:33<02:09, 129.45s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [11:05<00:00, 209.14s/it]100%|██████████| 4/4 [11:05<00:00, 166.28s/it]
+CURRENT S_STD:  1.1578947368421053
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:45<02:17, 45.87s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:51<01:54, 57.30s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [05:32<02:12, 132.34s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [10:10<00:00, 189.53s/it]100%|██████████| 4/4 [10:10<00:00, 152.50s/it]
+CURRENT S_STD:  1.263157894736842
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:21<01:04, 21.50s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:12<01:18, 39.04s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [06:31<02:46, 166.51s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [11:05<00:00, 208.95s/it]100%|██████████| 4/4 [11:05<00:00, 166.26s/it]
+CURRENT S_STD:  1.3684210526315788
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:26<01:19, 26.46s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:01<01:03, 31.75s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [05:21<02:15, 135.58s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 4/4 [10:06<00:00, 194.88s/it]100%|██████████| 4/4 [10:06<00:00, 151.71s/it]
+CURRENT S_STD:  1.4736842105263157
+  0%|          | 0/4 [00:00<?, ?it/s]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 25%|██▌       | 1/4 [00:19<00:57, 19.27s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 50%|█████     | 2/4 [01:02<01:06, 33.39s/it]Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+ 75%|███████▌  | 3/4 [03:54<01:36, 96.69s/it]
