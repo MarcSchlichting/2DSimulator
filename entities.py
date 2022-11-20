@@ -148,45 +148,53 @@ class Entity:
 
                 self.buildGeometry()
             
-            # elif self.integration_method == "RK1":
-            #     def f(z,acc):
-            #         return np.array([z[2],z[3],acc[0],acc[1]])
+            elif self.integration_method == "RK1":
+                def f(z,acc):
+                    return np.array([z[2],z[3],acc[0],acc[1]])
 
-            #     if np.abs(self.inputSteering) > 0.0:
-            #         raise ValueError
+                if np.abs(self.inputSteering) > 0.0:
+                    raise ValueError
                 
-            #     heading = self.heading
-            #     velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
-            #     acc_abs = np.clip(self.inputAcceleration - self.friction * self.speed, self.max_break_acceleration, self.max_acceleration)
-            #     acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
-            #     z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+                heading = self.heading
+                velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+                acc_abs = np.clip(self.inputAcceleration - self.friction * self.speed, self.max_break_acceleration, self.max_acceleration)
+                acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+                z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
 
-            #     #RK2
-            #     k1 = f(z_current, acc_new)
+                #RK1
+                k1 = f(z_current, acc_new)
             
-            #     z_new = z_current + dt * k1
+                z_new = z_current + dt * k1
 
-            #     #check for negative speed
-            #     # new_speed = np.dot(np.array([np.cos(heading),np.sin(heading)]),z_new[2:])
+                #check for negative speed
+                # new_speed = np.dot(np.array([np.cos(heading),np.sin(heading)]),z_new[2:])
                 
-            #     if z_new[0]>self.center.x:
-            #         z_new[:2] = np.array([self.center.x, self.center.y])
-            #         z_new[2:] = np.zeros((2,))
-            #         self.heading = heading
-            #     else:
-            #         self.heading = np.mod(np.arctan2(z_new[3],z_new[2]),2 * np.pi)
+                preliminary_heading = np.mod(np.arctan2(z_new[3],z_new[2]),2 * np.pi)
+                preliminary_velocity = Point(np.cos(-self.heading) * z_new[2],-np.sin(self.heading) * z_new[3]) # in body frame
+                if np.logical_or(preliminary_velocity.x < 0,np.abs(preliminary_heading-self.heading)>0.05):
+                    z_new[:2] = np.array([self.center.x, self.center.y])
+                    z_new[2:] = np.zeros((2,))
+                    self.heading = heading
 
-            #     self.center = Point(z_new[0],z_new[1])
-            #     self.velocity = Point(np.cos(-self.heading) * z_new[2],-np.sin(self.heading) * z_new[3]) # in body frame
+                # if z_new[0]>self.center.x:
+                #     z_new[:2] = np.array([self.center.x, self.center.y])
+                #     z_new[2:] = np.zeros((2,))
+                #     self.heading = heading
+                else:
+                    # self.heading = np.mod(np.arctan2(z_new[3],z_new[2]),2 * np.pi)
+                    self.heading = np.mod(np.arctan2(z_new[3],z_new[2]),2 * np.pi)
 
-            #     self.center = Point(z_new[0],z_new[1])
-            #     self.heading = np.mod(np.arctan2(z_new[3],z_new[2]),2 * np.pi)
-            #     self.velocity = Point(np.cos(-self.heading) * z_new[2],-np.sin(self.heading) * z_new[3]) # in body frame
+                # self.center = Point(z_new[0],z_new[1])
+                # self.velocity = Point(np.cos(-self.heading) * z_new[2],-np.sin(self.heading) * z_new[3]) # in body frame
+
+                self.center = Point(z_new[0],z_new[1])
+                # self.heading = np.mod(np.arctan2(z_new[3],z_new[2]),2 * np.pi)
+                self.velocity = Point(np.cos(-self.heading) * z_new[2],-np.sin(self.heading) * z_new[3]) # in body frame
                 
-            #     self.acceleration = acc_abs
-            #     self.angular_velocity = self.speed * self.inputSteering
+                self.acceleration = acc_abs
+                self.angular_velocity = self.speed * self.inputSteering
 
-            #     self.buildGeometry()
+                self.buildGeometry()
 
                 # print("stop")
 

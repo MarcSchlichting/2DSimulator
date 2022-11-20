@@ -86,6 +86,7 @@ if __name__=="__main__":
     hf_simulation_config = {"dt":0.1,"integration_method":"RK4","sensor_std":0.0}
 
     im = "RK2"
+    num_samples = 10
     print("INTEGRATION METHOD:",im)
     mse_all = []
     for dt in np.linspace(0.1,1.5,20):
@@ -94,9 +95,9 @@ if __name__=="__main__":
         for s_std in np.linspace(0.0,2.0,20):
             print("CURRENT S_STD: ",s_std)
             cf_simulation_config = {"dt":dt,"integration_method":im,"sensor_std":s_std}
-            trajectories, scenario_configurations, collisions = evaluate_scenarios(scenarios,50,hf_simulation_config,cf_simulation_config)
+            trajectories, scenario_configurations, collisions = evaluate_scenarios(scenarios,num_samples,hf_simulation_config,cf_simulation_config)
             mse, bce = batch_compare_trajectories(trajectories)
             mse_dt.append(mse)
         mse_all.append(mse_dt)
-    np.save(f"{im}_all_50.npy",np.array(mse_all))
+    np.save(f"{im}_all_{num_samples}.npy",np.array(mse_all))
     print("stop")
