@@ -86,7 +86,7 @@ if __name__=="__main__":
     hf_simulation_config = {"dt":0.1,"integration_method":"RK4","sensor_std":0.0}
 
     im = "RK1"
-    num_samples = 10
+    num_samples = 50
     print("INTEGRATION METHOD:",im)
     mse_all = []
     for dt in np.linspace(0.1,1.5,20):
