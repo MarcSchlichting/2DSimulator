@@ -3,6 +3,7 @@ import numpy as np
 from tqdm import tqdm
 from ax.service.ax_client import AxClient
 import pandas as pd
+import math
 
 
 from example_stopping_car import StoppingCarScenario
@@ -86,7 +87,9 @@ def batch_compare_trajectories(trajectories):
 def objective(cf_simulation_config):
     trajectories, scenario_configurations, collisions = evaluate_scenarios(scenarios,rollouts_per_scenario,hf_simulation_config,cf_simulation_config)
     mse, bce = batch_compare_trajectories(trajectories)
-    mse = torch.mean(torch.Tensor(mse))
+    mse_mean = torch.mean(torch.Tensor(mse))
+    mse_std = torch.std(torch.Tensor(mse))
+    mse_sem = mse_std/math.sqrt(len(mse))
 
     if cf_simulation_config["integration_method"]=="RK1":
         int_cost = 1
@@ -98,9 +101,9 @@ def objective(cf_simulation_config):
         raise ValueError
     compute_cost = 25/cf_simulation_config["dt"]*(int_cost + 1/cf_simulation_config["sensor_std"])
     if compute_cost>compute_budget:
-        mse += 10000
+        mse_mean += 10000
     
-    return {"mse":(mse.item(),0.0)}
+    return {"mse":(mse_mean.item(),mse_sem.item())}
 
 if __name__=="__main__":
     ax_client = AxClient()
