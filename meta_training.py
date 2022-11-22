@@ -13,7 +13,7 @@ from example_intersection import OrthogonalIntersectionScenario
 
 scenarios = [StoppingCarScenario(),OrthogonalIntersectionScenario(),FrontalCollisionScenario(),SinusoidalCarScenario()]
 hf_simulation_config = {"dt":0.1,"integration_method":"RK4","sensor_std":0.0}
-compute_budget = 100
+compute_budget = 200
 rollouts_per_scenario = 10
 num_iterations = 200
 
@@ -145,10 +145,10 @@ if __name__=="__main__":
         # Local evaluation here can be replaced with deployment to external system.
         raw_data = objective(parameters)
         ax_client.complete_trial(trial_index=trial_index, raw_data=raw_data)
-        ax_client.generation_strategy.trials_as_df.to_csv("meta_training_200_sem.csv")
+        ax_client.generation_strategy.trials_as_df.to_csv("meta_training_200_200_sem.csv")
         best_parameters, values = ax_client.get_best_parameters()
         best_parameter_list.append(best_parameters)
-        pd.DataFrame.from_records(best_parameter_list).to_csv("meta_training_200_sem_best_parameters.csv")
+        pd.DataFrame.from_records(best_parameter_list).to_csv("meta_training_200_200_sem_best_parameters.csv")
         print("Best Parameters: ",best_parameters)
     
     best_parameters, values = ax_client.get_best_parameters()
