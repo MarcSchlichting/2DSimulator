@@ -100,13 +100,14 @@ def objective(cf_simulation_config):
     else:
         raise ValueError
     compute_cost = 25/cf_simulation_config["dt"]*(int_cost + 1/cf_simulation_config["sensor_std"])
-    if compute_cost>compute_budget:
-        mse_mean += 10000
+    # if compute_cost>compute_budget:
+    #     mse_mean += 10000
     
-    return {"mse":(mse_mean.item(),mse_sem.item())}
+    return {"mse":(mse_mean.item(),mse_sem.item()),"compute_cost":(compute_cost,0.0)}
 
 if __name__=="__main__":
     ax_client = AxClient()
+    
     # ax_client = AxClient(enforce_sequential_optimization=False)
 
     ax_client.create_experiment(
@@ -132,15 +133,20 @@ if __name__=="__main__":
         ],
         objective_name="mse",
         minimize=True,  
+        outcome_constraints=["comput_cost <= "+str(compute_budget)],
     )
-
+    
+    ax_client._generation_strategy._curr.num_trials = 20
+    best_parameter_list = []
     for i in range(num_iterations):
         parameters, trial_index = ax_client.get_next_trial()
         # Local evaluation here can be replaced with deployment to external system.
         raw_data = objective(parameters)
         ax_client.complete_trial(trial_index=trial_index, raw_data=raw_data)
-        ax_client.generation_strategy.trials_as_df.to_csv("meta_learning_200_sem.csv")
+        ax_client.generation_strategy.trials_as_df.to_csv("meta_training_200_sem.csv")
         best_parameters, values = ax_client.get_best_parameters()
+        best_parameter_list.append(best_parameters)
+        pd.DataFrame.from_records(best_parameter_list).to_csv("meta_training_200_sem_best_parameters.csv")
         print("Best Parameters: ",best_parameters)
     
     best_parameters, values = ax_client.get_best_parameters()
