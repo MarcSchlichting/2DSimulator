@@ -145,7 +145,7 @@ if __name__=="__main__":
         # Local evaluation here can be replaced with deployment to external system.
         raw_data = objective(parameters)
         ax_client.complete_trial(trial_index=trial_index, raw_data=raw_data)
-        ax_client.generation_strategy.trials_as_df.to_csv("meta_training_200_200_sem.csv")
+        ax_client.generation_strategy.trials_as_df.to_csv("meta_training_200_500.csv")
         try:
             best_parameters, values = ax_client.get_best_parameters()
             best_parameter_list.append(best_parameters)
