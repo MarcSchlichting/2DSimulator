@@ -135,7 +135,7 @@ if __name__=="__main__":
         ],
         objective_name="mse",
         minimize=True,  
-        outcome_constraints=["comput_cost <= "+str(compute_budget)],
+        outcome_constraints=["compute_cost <= "+str(compute_budget)],
     )
     
     ax_client._generation_strategy._curr.num_trials = 20
