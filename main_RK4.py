@@ -85,6 +85,10 @@ if __name__=="__main__":
     scenarios = [StoppingCarScenario(),OrthogonalIntersectionScenario(),FrontalCollisionScenario(),SinusoidalCarScenario()]
     hf_simulation_config = {"dt":0.1,"integration_method":"RK4","sensor_std":0.0}
 
+    # cf_simulation_config = {"dt":0.1,"integration_method":"RK1","sensor_std":10.0}
+    # trajectories, scenario_configurations, collisions = evaluate_scenarios(scenarios,10,hf_simulation_config,cf_simulation_config)
+    # mse, bce = batch_compare_trajectories(trajectories)
+
     im = "RK4"
     num_samples = 50
     print("INTEGRATION METHOD:",im)
