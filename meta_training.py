@@ -103,8 +103,8 @@ def objective(cf_simulation_config):
     # if compute_cost>compute_budget:
     #     mse_mean += 10000
     
-    return {"mse":(mse_mean.item(),mse_sem.item()),"compute_cost":(compute_cost,0.0)}   #sem version
-    # return {"mse":(mse_mean.item(),0.0),"compute_cost":(compute_cost,0.0)}   #non-sem version
+    # return {"mse":(mse_mean.item(),mse_sem.item()),"compute_cost":(compute_cost,0.0)}   #sem version
+    return {"mse":(mse_mean.item(),0.0),"compute_cost":(compute_cost,0.0)}   #non-sem version
 
 
 if __name__=="__main__":
@@ -149,11 +149,11 @@ if __name__=="__main__":
         try:
             best_parameters, values = ax_client.get_best_parameters()
             best_parameter_list.append(best_parameters)
-            pd.DataFrame.from_records(best_parameter_list).to_csv("meta_training_200_500_sem_best_parameters.csv")
+            pd.DataFrame.from_records(best_parameter_list).to_csv("meta_training_200_500_best_parameters.csv")
             print("Best Parameters: ",best_parameters)
         except:
             best_parameter_list.append({"dt": None, "integration_method": None, "sensor_std": None})
-            pd.DataFrame.from_records(best_parameter_list).to_csv("meta_training_200_500_sem_best_parameters.csv")
+            pd.DataFrame.from_records(best_parameter_list).to_csv("meta_training_200_500_best_parameters.csv")
             print("no best parameter")
     
     best_parameters, values = ax_client.get_best_parameters()
