@@ -103,8 +103,8 @@ def objective(cf_simulation_config):
     # if compute_cost>compute_budget:
     #     mse_mean += 10000
     
-    # return {"mse":(mse_mean.item(),mse_sem.item()),"compute_cost":(compute_cost,0.0)}   #sem version
-    return {"mse":(mse_mean.item(),0.0),"compute_cost":(compute_cost,0.0)}   #non-sem version
+    return {"mse":(mse_mean.item(),mse_sem.item()),"compute_cost":(compute_cost,0.0)}   #sem version
+    # return {"mse":(mse_mean.item(),0.0),"compute_cost":(compute_cost,0.0)}   #non-sem version
 
 
 if __name__=="__main__":
