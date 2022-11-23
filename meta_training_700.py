@@ -130,7 +130,7 @@ if __name__=="__main__":
             {
                 "name": "sensor_std",
                 "type": "range",
-                "bounds": [0.01, 2.0],
+                "bounds": [0.1, 10.0],
             },
         ],
         objective_name="mse",
