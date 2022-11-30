@@ -20,7 +20,7 @@ def evaluate_scenarios(scenarios:list,num_per_scenario:int,hf_simulation_configu
     collisions = []     #list of tuples (collision_hf, collision_cf)
     
     for s in tqdm(scenarios):
-        for i in tqdm(range(num_per_scenario)):
+        for i in range(num_per_scenario):
             phi_sample = s.sample_scenario_configuration()
             results_hf = s.run(phi_sample,hf_simulation_configuration)
             results_cf = s.run(phi_sample,cf_simulation_configuration)
