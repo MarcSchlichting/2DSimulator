@@ -12,7 +12,7 @@ import math
 import time
 from multiprocessing import Pool
 
-class FrontalCollisionScenario(object):
+class ParallelCollisionScenario(object):
     def __init__(self) -> None:
         #default configuration for inner loop
         self.scenario_configuration = {"ego_max_speed":5,
@@ -92,7 +92,7 @@ class FrontalCollisionScenario(object):
 
 
         # The other car
-        c1 = Car(Point(10,90), 0.0, "blue")
+        c1 = Car(Point(10,88), 0.0, "blue")
         c1.integration_method = simulation_configuration["integration_method"]
         c1.max_speed = scenario_configuration["other_max_speed"] #10
         c1.max_break_acceleration = scenario_configuration["other_max_break_acceleration"] #-1.5
@@ -250,7 +250,7 @@ class FrontalCollisionScenario(object):
 if __name__=="__main__":
     import matplotlib.pyplot as plt
     # ax_search()
-    scenario = FrontalCollisionScenario()
+    scenario = ParallelCollisionScenario()
     # failures, failure_configs, non_failure_configs = scenario.inner_loop_mc({"dt":0.1,"integration_method":"RK4","sensor_std":0.0},5000)
     # scenario.plot_inner_loop_results(failure_configs, non_failure_configs)
     scenario.run(scenario.scenario_configuration,{"dt":0.1,"integration_method":"RK4","sensor_std":0.0},render=True)

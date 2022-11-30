@@ -6,14 +6,12 @@ import pandas as pd
 import math
 
 
-from example_stopping_car import StoppingCarScenario
-from example_frontal_collision import FrontalCollisionScenario
-from example_sinusoidal_car import SinusoidalCarScenario
-from example_intersection import OrthogonalIntersectionScenario
+# from example_diagonal_intersection import DiagonalIntersectionScenario
+from example_intersection2 import OrthogonalIntersectionScenario2
+from example_parallel_collision import ParallelCollisionScenario
 
-scenarios = [StoppingCarScenario(),OrthogonalIntersectionScenario(),FrontalCollisionScenario(),SinusoidalCarScenario()]
+scenarios = [OrthogonalIntersectionScenario2(),ParallelCollisionScenario()]
 hf_simulation_config = {"dt":0.1,"integration_method":"RK4","sensor_std":0.1}
-compute_budget = 700
 rollouts_per_scenario = 500
 
 def evaluate_scenarios(scenarios:list,num_per_scenario:int,hf_simulation_configuration:dict,cf_simulation_configuration):
@@ -22,7 +20,7 @@ def evaluate_scenarios(scenarios:list,num_per_scenario:int,hf_simulation_configu
     collisions = []     #list of tuples (collision_hf, collision_cf)
     
     for s in tqdm(scenarios):
-        for i in range(num_per_scenario):
+        for i in tqdm(range(num_per_scenario)):
             phi_sample = s.sample_scenario_configuration()
             results_hf = s.run(phi_sample,hf_simulation_configuration)
             results_cf = s.run(phi_sample,cf_simulation_configuration)
@@ -113,7 +111,6 @@ if __name__=="__main__":
     print("Std MSE: ",mse_std)
     print("Miss Rate: ",miss_rate)
     print("False Positive Rate", false_positive_rate)
-
 
 
     

@@ -59,9 +59,13 @@ class Entity:
                 
                 heading = self.heading
                 velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+                # print(velocity_rframe)
                 acc_abs = np.clip(self.inputAcceleration - self.friction * self.speed, self.max_break_acceleration, self.max_acceleration)
+                # print(acc_abs)
                 acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+                # print(acc_new)
                 z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+                # print(z_current)
 
                 #RK4 
                 k1 = f(z_current,acc_new)
@@ -70,6 +74,7 @@ class Entity:
                 k4 = f(z_current + dt * k3, acc_new)
 
                 z_new = z_current + dt/6 * (k1 + 2*k2 + 2*k3 +k4)
+                # print(z_new)
 
                 #check for negative speed
                 # new_speed = np.dot(np.array([np.cos(heading),np.sin(heading)]),z_new[2:])
@@ -78,7 +83,9 @@ class Entity:
                 # prelim_velocity = Point(np.cos(-self.heading) * z_new[2],-np.sin(self.heading) * z_new[3])
                 # prelim_speed = np.sqrt(prelim_velocity.x**2 + prelim_velocity.y**2)
                 preliminary_heading = np.mod(np.arctan2(z_new[3],z_new[2]),2 * np.pi)
+                # print(preliminary_heading)
                 preliminary_velocity = Point(np.cos(-self.heading) * z_new[2],-np.sin(self.heading) * z_new[3]) # in body frame
+                # print(preliminary_velocity)
                 if np.logical_or(preliminary_velocity.x < 0,np.abs(preliminary_heading-self.heading)>0.05):
                     z_new[:2] = np.array([self.center.x, self.center.y])
                     z_new[2:] = np.zeros((2,))

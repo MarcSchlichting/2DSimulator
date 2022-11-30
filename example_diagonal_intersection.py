@@ -10,41 +10,33 @@ import time
 from ax.service.ax_client import AxClient
 import math
 import time
-from multiprocessing import Pool
+# from mpire import WorkerPool
 
-class FrontalCollisionScenario(object):
+class DiagonalIntersectionScenario(object):
     def __init__(self) -> None:
         #default configuration for inner loop
-        self.scenario_configuration = {"ego_max_speed":5,
-                                    "ego_max_break_acceleration":-1.5,
+        self.scenario_configuration = {"ego_max_speed":10,
+                                    "ego_max_break_acceleration":-5.8,
                                     "ego_initial_speed":3.0,
-                                    "idm_T":2.0,
+                                    "other_car_initial_speed":3.0,
+                                    "other_car_acc":10.0,
+                                    "other_car_angle":np.pi/4,
+                                    "idm_T":1.0,
                                     "idm_a":1.5,
                                     "idm_b":1.5,
-                                    "idm_s0":3.1,
-                                    "other_max_speed":5,
-                                    "other_max_break_acceleration":-1.5,
-                                    "other_initial_speed":3.0,
-                                    "other_idm_T":2.0,
-                                    "other_idm_a":1.5,
-                                    "other_idm_b":1.5,
-                                    "other_idm_s0":3.1}
+                                    "idm_s0":1.1}
 
         #define the type for each of the variables
-        self.scenario_configuration_domain = {"ego_max_speed":{"type":"range", "values":[2,5]},
+        self.scenario_configuration_domain = {"ego_max_speed":{"type":"range", "values":[5,20]},
                                     "ego_max_break_acceleration":{"type":"range", "values":[-4,-0.5]},
-                                    "ego_initial_speed":{"type":"range", "values":[2,5]},
-                                    "idm_T":{"type":"range", "values":[1.5,5.0]},
+                                    "ego_initial_speed":{"type":"range", "values":[3,10]},
+                                    "other_car_initial_speed":{"type":"range","values":[1.0,5.0]},
+                                    "other_car_acc":{"type":"range","values":[10.0,20.0]},
+                                    "other_car_angle":{"type":"range","values":[0.15*np.pi,0.35*np.pi]},
+                                    "idm_T":{"type":"range", "values":[0.5,3.0]},
                                     "idm_a":{"type":"range", "values":[0.5,2.0]},
-                                    "idm_b":{"type":"range", "values":[1.5,4.0]},
-                                    "idm_s0":{"type":"range", "values":[2.0,5.0]},
-                                    "other_max_speed":{"type":"range", "values":[2,5]},
-                                    "other_max_break_acceleration":{"type":"range", "values":[-4,-0.5]},
-                                    "other_initial_speed":{"type":"range", "values":[2,5]},
-                                    "other_idm_T":{"type":"range", "values":[1.5,5.0]},
-                                    "other_idm_a":{"type":"range", "values":[0.5,2.0]},
-                                    "other_idm_b":{"type":"range", "values":[1.5,4.0]},
-                                    "other_idm_s0":{"type":"range", "values":[2.0,5.0]}}
+                                    "idm_b":{"type":"range", "values":[0.5,2.0]},
+                                    "idm_s0":{"type":"range", "values":[0.0,5.0]}}
     
     def sample_scenario_configuration(self):
         """Method that randomly samples from all the possible scenario configurations.
@@ -79,25 +71,22 @@ class FrontalCollisionScenario(object):
         dt = simulation_configuration["dt"] # time steps in terms of seconds. In other words, 1/dt is the FPS.
         w = World(dt, width = 120, height = 120, ppm = 6) # The world is 120 meters by 120 meters. ppm is the pixels per meter.
 
-        # Let's add some sidewalks and RectangleBuildings.
-        # A Painting object is a rectangle that the vehicles cannot collide with. So we use them for the sidewalks.
-        # A RectangleBuilding object is also static -- it does not move. But as opposed to Painting, it can be collided with.
-        # For both of these objects, we give the center point and the size.
-        w.add(Painting(Point(60, 106.5), Point(120, 27), 'gray80')) # We build a sidewalk.
-        w.add(RectangleBuilding(Point(60, 107.5), Point(120, 25))) # The RectangleBuilding is then on top of the sidewalk, with some margin.
+        # w.add(Painting(Point(95, 107.5), Point(74, 29), 'gray80')) # We build a sidewalk.
+        # w.add(Painting(Point(17.5, 107.5), Point(59, 29), 'gray80')) # We build a sidewalk.
+        # w.add(RectangleBuilding(Point(95, 107.5), Point(70, 25))) 
+        # w.add(RectangleBuilding(Point(17.5, 107.5), Point(55, 25))) 
 
-        w.add(Painting(Point(60, 41), Point(120, 82), 'gray80')) # We build a sidewalk.
-        w.add(RectangleBuilding(Point(60, 40), Point(120, 80))) # The RectangleBuilding is then on top of the sidewalk, with some margin.
+        # w.add(Painting(Point(95, 40), Point(74,84), 'gray80'))
+        # w.add(Painting(Point(17.5, 40), Point(59,84), 'gray80'))
+        # w.add(RectangleBuilding(Point(95, 40), Point(70, 80))) 
+        # w.add(RectangleBuilding(Point(17.5, 40), Point(55, 80)))
 
 
 
         # The other car
-        c1 = Car(Point(10,90), 0.0, "blue")
+        c1= Car(Point(30,60), scenario_configuration["other_car_angle"], 'blue')
+        c1.velocity = Point(scenario_configuration["other_car_initial_speed"],0.0) 
         c1.integration_method = simulation_configuration["integration_method"]
-        c1.max_speed = scenario_configuration["other_max_speed"] #10
-        c1.max_break_acceleration = scenario_configuration["other_max_break_acceleration"] #-1.5
-        c1.position_sensor_std = simulation_configuration["sensor_std"]
-        c1.velocity = Point(scenario_configuration["other_initial_speed"],0.0) #Point(3.0,0.)
         w.add(c1)
 
         c2 = Car(Point(110,90), np.pi)
@@ -105,9 +94,12 @@ class FrontalCollisionScenario(object):
         c2.max_speed = scenario_configuration["ego_max_speed"] #10
         c2.max_break_acceleration = scenario_configuration["ego_max_break_acceleration"] #-1.5
         c2.position_sensor_std = simulation_configuration["sensor_std"]
-        c2.velocity = Point(scenario_configuration["ego_initial_speed"],0.0) #Point(3.0,0.)
-
+        c2.velocity = Point(scenario_configuration["ego_initial_speed"],0.0) #Point(3.0,0.0)
         w.add(c2)
+
+        c_inf = Car(Point(-10000,90),np.pi)
+        c_inf.integration_method = simulation_configuration["integration_method"]
+        w.add(c_inf)
 
         #datalogs
         x_pos_list = []
@@ -129,10 +121,15 @@ class FrontalCollisionScenario(object):
                 t_list.append(k*dt)
 
             c2.set_control(*idm_driver(w,c2,c1,scenario_configuration["idm_s0"],scenario_configuration["idm_T"],scenario_configuration["idm_a"],scenario_configuration["idm_b"]))
-            c1.set_control(*idm_driver(w,c1,c2,scenario_configuration["other_idm_s0"],scenario_configuration["other_idm_T"],scenario_configuration["other_idm_a"],scenario_configuration["other_idm_b"]))
-            # c1.set_control(0.0,-0.1)
+            
+            # if math.sin(2*math.pi/scenario_configuration["lead_car_osc_period"]*k*simulation_configuration["dt"]) > 0:
+            #     c1_control = (0,scenario_configuration["lead_car_acc"])
+            # else:
+            #     c1_control = (0,scenario_configuration["lead_car_break_acc"])
             
 
+            c1.set_control(0.0,scenario_configuration["other_car_acc"])
+            
             w.tick() 
             if render:
                 w.render()
@@ -159,7 +156,7 @@ class FrontalCollisionScenario(object):
         w.close()
 
         return results_dict
-
+    
     def inner_loop_one_step(self,simulation_configuration):
         sampled_scenario_config = self.sample_scenario_configuration()
             
@@ -172,7 +169,7 @@ class FrontalCollisionScenario(object):
         else:
             return None,None,sampled_scenario_config
 
-    def inner_loop_mc(self,simulation_configuration,num_trials,num_processes=20):
+    def inner_loop_mc(self,simulation_configuration,num_trials,num_processes=1):
         """Random trials for values sampled from the inner loop.
 
         Args:
@@ -188,9 +185,11 @@ class FrontalCollisionScenario(object):
         failure_configs = []
         non_failure_configs = []
 
-        # with Pool(processes=num_processes) as pool:
 
-        #     for result in pool.imap(self.inner_loop_one_step, num_trials * [simulation_configuration]):
+
+        # with WorkerPool(n_jobs=num_processes) as pool:
+
+        #     for result in pool.imap(self.inner_loop_one_step, num_trials * [(simulation_configuration,)],progress_bar=True):
         #     # result = self.inner_loop_one_step()
 
         #         if result[0] is not None:
@@ -238,9 +237,16 @@ class FrontalCollisionScenario(object):
             axs[i].set_title(scenario_parameters[i])
        
         fig.tight_layout()
-        fig.savefig(f"MC_inner_loop_hist_frontal_{int(time.time())}.png",dpi=600)
+        fig.savefig(f"MC_inner_loop_hist_intersection_{int(time.time())}.png",dpi=600)
         # fig.show()
         print("stop")
+
+
+
+
+
+
+
 
 
 
@@ -250,10 +256,10 @@ class FrontalCollisionScenario(object):
 if __name__=="__main__":
     import matplotlib.pyplot as plt
     # ax_search()
-    scenario = FrontalCollisionScenario()
-    # failures, failure_configs, non_failure_configs = scenario.inner_loop_mc({"dt":0.1,"integration_method":"RK4","sensor_std":0.0},5000)
-    # scenario.plot_inner_loop_results(failure_configs, non_failure_configs)
-    scenario.run(scenario.scenario_configuration,{"dt":0.1,"integration_method":"RK4","sensor_std":0.0},render=True)
+    scenario = DiagonalIntersectionScenario()
+    failure, failure_configs, non_failure_configs = scenario.inner_loop_mc({"dt":0.1,"integration_method":"RK4","sensor_std":0.0},5000,num_processes=8)
+    scenario.plot_inner_loop_results(failure_configs,non_failure_configs)
+    # scenario.run(scenario.scenario_configuration,{"dt":0.1,"integration_method":"RK4","sensor_std":0.0},render=True)
 
     # #compare against standard case dt=0.1
     # MSEs = []
