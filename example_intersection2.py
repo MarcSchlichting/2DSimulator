@@ -15,6 +15,7 @@ import time
 class OrthogonalIntersectionScenario2(object):
     def __init__(self) -> None:
         #default configuration for inner loop
+        self.name = "OrthogonalIntersectionScenario2"
         self.scenario_configuration = {"ego_max_speed":10,
                                     "ego_max_break_acceleration":-5.8,
                                     "ego_initial_speed":3.0,

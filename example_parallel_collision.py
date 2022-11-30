@@ -15,6 +15,7 @@ from multiprocessing import Pool
 class ParallelCollisionScenario(object):
     def __init__(self) -> None:
         #default configuration for inner loop
+        self.name = "ParallelCollisionScenario"
         self.scenario_configuration = {"ego_max_speed":5,
                                     "ego_max_break_acceleration":-1.5,
                                     "ego_initial_speed":3.0,

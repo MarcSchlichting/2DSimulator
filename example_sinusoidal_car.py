@@ -15,6 +15,7 @@ import time
 class SinusoidalCarScenario(object):
     def __init__(self) -> None:
         #default configuration for inner loop
+        self.name = "SinusoidalCarScenario"
         self.scenario_configuration = {"ego_max_speed":10,
                                     "ego_max_break_acceleration":-0.8,
                                     "ego_initial_speed":3.0,

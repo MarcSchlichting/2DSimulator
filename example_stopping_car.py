@@ -15,6 +15,7 @@ from multiprocessing import Pool
 class StoppingCarScenario(object):
     def __init__(self) -> None:
         #default configuration for inner loop
+        self.name = "StoppingCarScenario"
         self.scenario_configuration = {"ego_max_speed":10,
                                     "ego_max_break_acceleration":-1.5,
                                     "ego_initial_speed":3.0,
