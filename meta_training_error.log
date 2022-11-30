@@ -1,0 +1,322 @@
+  0%|          | 0/4 [00:00<?, ?it/s]/home/mschl/2DSimulator/entities.py:65: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:65: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:55: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:55: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:61: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:61: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:67: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+/home/mschl/2DSimulator/example_stopping_car.py:143: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+/home/mschl/2DSimulator/entities.py:119: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:119: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:111: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:111: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:117: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:117: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:120: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+ 25%|██▌       | 1/4 [15:31<46:34, 931.45s/it]/home/mschl/2DSimulator/example_intersection.py:149: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 50%|█████     | 2/4 [34:50<35:31, 1065.50s/it]/home/mschl/2DSimulator/example_frontal_collision.py:154: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 75%|███████▌  | 3/4 [51:23<17:12, 1032.32s/it]/home/mschl/2DSimulator/example_sinusoidal_car.py:157: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+100%|██████████| 4/4 [1:09:18<00:00, 1049.31s/it]100%|██████████| 4/4 [1:09:18<00:00, 1039.75s/it]
+Results for  meta_training_1750_sem_best_parameters.csv
+Mean MSE:  0.008285276591777802
+Std MSE:  0.15457049012184143
+Miss Rate:  0.0
+False Positive Rate 0.002767017155506364
+  0%|          | 0/4 [00:00<?, ?it/s]/home/mschl/2DSimulator/entities.py:65: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:65: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:55: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:55: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:61: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:61: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:67: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+/home/mschl/2DSimulator/example_stopping_car.py:143: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+/home/mschl/2DSimulator/entities.py:119: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:119: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:111: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:111: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:117: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:117: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:120: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+ 25%|██▌       | 1/4 [14:40<44:01, 880.65s/it]/home/mschl/2DSimulator/example_intersection.py:149: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 50%|█████     | 2/4 [32:44<33:20, 1000.14s/it]/home/mschl/2DSimulator/example_frontal_collision.py:154: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 75%|███████▌  | 3/4 [47:54<15:58, 958.88s/it] /home/mschl/2DSimulator/example_sinusoidal_car.py:157: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+100%|██████████| 4/4 [1:04:33<00:00, 975.02s/it]100%|██████████| 4/4 [1:04:33<00:00, 968.49s/it]
+Results for  meta_training_700_sem_best_parameters.csv
+Mean MSE:  2.0334465503692627
+Std MSE:  23.67304801940918
+Miss Rate:  0.00975609756097561
+False Positive Rate 0.022841225626740947
+  0%|          | 0/4 [00:00<?, ?it/s]/home/mschl/2DSimulator/entities.py:65: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:65: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:55: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:55: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:61: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:61: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:67: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+/home/mschl/2DSimulator/example_stopping_car.py:143: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+/home/mschl/2DSimulator/entities.py:168: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:168: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:160: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:166: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:166: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:169: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+/home/mschl/2DSimulator/entities.py:160: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+ 25%|██▌       | 1/4 [14:25<43:15, 865.10s/it]/home/mschl/2DSimulator/example_intersection.py:149: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 50%|█████     | 2/4 [32:25<33:03, 991.59s/it]/home/mschl/2DSimulator/example_frontal_collision.py:154: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 75%|███████▌  | 3/4 [47:53<16:02, 962.87s/it]/home/mschl/2DSimulator/example_sinusoidal_car.py:157: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+100%|██████████| 4/4 [1:04:15<00:00, 970.40s/it]100%|██████████| 4/4 [1:04:15<00:00, 963.97s/it]
+Results for  meta_training_350_sem_best_parameters.csv
+Mean MSE:  2.6643590927124023
+Std MSE:  20.24074935913086
+Miss Rate:  0.03888888888888889
+False Positive Rate 0.0478021978021978
+  0%|          | 0/4 [00:00<?, ?it/s]/home/mschl/2DSimulator/entities.py:65: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:65: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:55: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:55: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:61: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:61: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:67: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+/home/mschl/2DSimulator/example_stopping_car.py:143: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+/home/mschl/2DSimulator/entities.py:119: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:119: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:111: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:111: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:117: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:117: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:120: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+ 25%|██▌       | 1/4 [10:43<32:11, 643.84s/it]/home/mschl/2DSimulator/example_intersection.py:149: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 50%|█████     | 2/4 [23:36<23:58, 719.49s/it]/home/mschl/2DSimulator/example_frontal_collision.py:154: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 75%|███████▌  | 3/4 [34:50<11:38, 698.59s/it]/home/mschl/2DSimulator/example_sinusoidal_car.py:157: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+100%|██████████| 4/4 [47:05<00:00, 713.10s/it]100%|██████████| 4/4 [47:05<00:00, 706.34s/it]
+Results for  meta_training_175_sem_best_parameters.csv
+Mean MSE:  17.520124435424805
+Std MSE:  76.26327514648438
+Miss Rate:  0.042682926829268296
+False Positive Rate 0.056100217864923745
+  0%|          | 0/4 [00:00<?, ?it/s]/home/mschl/2DSimulator/entities.py:65: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:65: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:55: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:55: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:61: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:61: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:67: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+/home/mschl/2DSimulator/example_stopping_car.py:143: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 25%|██▌       | 1/4 [16:55<50:47, 1015.73s/it]/home/mschl/2DSimulator/example_intersection.py:149: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 50%|█████     | 2/4 [37:08<37:43, 1131.78s/it]/home/mschl/2DSimulator/example_frontal_collision.py:154: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 75%|███████▌  | 3/4 [55:06<18:27, 1107.27s/it]/home/mschl/2DSimulator/example_sinusoidal_car.py:157: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+100%|██████████| 4/4 [1:14:43<00:00, 1134.52s/it]100%|██████████| 4/4 [1:14:43<00:00, 1120.78s/it]
+Results for  meta_training_1750_best_parameters.csv
+Mean MSE:  1.1212903261184692
+Std MSE:  17.36111068725586
+Miss Rate:  0.023391812865497075
+False Positive Rate 0.011481683980317113
+  0%|          | 0/4 [00:00<?, ?it/s]/home/mschl/2DSimulator/entities.py:65: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:65: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:55: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:55: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:61: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:61: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:67: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+/home/mschl/2DSimulator/example_stopping_car.py:143: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+/home/mschl/2DSimulator/entities.py:168: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:168: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:160: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:166: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:166: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:169: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+/home/mschl/2DSimulator/entities.py:160: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+ 25%|██▌       | 1/4 [15:34<46:42, 934.26s/it]/home/mschl/2DSimulator/example_intersection.py:149: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 50%|█████     | 2/4 [34:31<35:07, 1053.73s/it]/home/mschl/2DSimulator/example_frontal_collision.py:154: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 75%|███████▌  | 3/4 [50:54<17:01, 1021.58s/it]/home/mschl/2DSimulator/example_sinusoidal_car.py:157: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+100%|██████████| 4/4 [1:08:42<00:00, 1039.62s/it]100%|██████████| 4/4 [1:08:42<00:00, 1030.55s/it]
+Results for  meta_training_700_best_parameters.csv
+Mean MSE:  0.16725116968154907
+Std MSE:  2.2612202167510986
+Miss Rate:  0.023668639053254437
+False Positive Rate 0.014199890770071
+  0%|          | 0/4 [00:00<?, ?it/s]/home/mschl/2DSimulator/entities.py:65: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:65: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:55: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:55: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:61: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:61: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:67: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+/home/mschl/2DSimulator/example_stopping_car.py:143: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+/home/mschl/2DSimulator/entities.py:119: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:119: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:111: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:111: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:117: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:117: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:120: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+ 25%|██▌       | 1/4 [12:37<37:51, 757.16s/it]/home/mschl/2DSimulator/example_intersection.py:149: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 50%|█████     | 2/4 [27:42<28:08, 844.10s/it]/home/mschl/2DSimulator/example_frontal_collision.py:154: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 75%|███████▌  | 3/4 [40:36<13:32, 812.31s/it]/home/mschl/2DSimulator/example_sinusoidal_car.py:157: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+100%|██████████| 4/4 [54:36<00:00, 823.37s/it]100%|██████████| 4/4 [54:36<00:00, 819.23s/it]
+Results for  meta_training_350_best_parameters.csv
+Mean MSE:  5.787103652954102
+Std MSE:  35.3837890625
+Miss Rate:  0.031446540880503145
+False Positive Rate 0.051059206952743075
+  0%|          | 0/4 [00:00<?, ?it/s]/home/mschl/2DSimulator/entities.py:65: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:65: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:55: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:55: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:61: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:61: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:67: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+/home/mschl/2DSimulator/example_stopping_car.py:143: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+/home/mschl/2DSimulator/entities.py:168: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:168: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  acc_new = np.array([np.cos(heading) * acc_abs, np.sin(heading) * acc_abs])
+/home/mschl/2DSimulator/entities.py:160: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+/home/mschl/2DSimulator/entities.py:166: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:166: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  velocity_rframe = np.array([np.cos(heading) * self.speed, np.sin(heading) * self.speed])
+/home/mschl/2DSimulator/entities.py:169: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  z_current = np.array([self.center.x,self.center.y,velocity_rframe[0],velocity_rframe[1]])
+/home/mschl/2DSimulator/entities.py:160: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  return np.array([z[2],z[3],acc[0],acc[1]])
+ 25%|██▌       | 1/4 [11:37<34:52, 697.61s/it]/home/mschl/2DSimulator/example_intersection.py:149: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 50%|█████     | 2/4 [25:26<25:49, 774.72s/it]/home/mschl/2DSimulator/example_frontal_collision.py:154: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+ 75%|███████▌  | 3/4 [37:25<12:29, 749.40s/it]/home/mschl/2DSimulator/example_sinusoidal_car.py:157: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  "acc":np.array(acc_list).T,
+100%|██████████| 4/4 [50:15<00:00, 757.69s/it]100%|██████████| 4/4 [50:15<00:00, 753.99s/it]
+Results for  meta_training_175_best_parameters.csv
+Mean MSE:  9.511463165283203
+Std MSE:  48.31507110595703
+Miss Rate:  0.07344632768361582
+False Positive Rate 0.06308283049917718
