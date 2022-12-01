@@ -94,29 +94,43 @@ def calculate_confusion_matrix(collisions):
 
 
 if __name__=="__main__":
-    best_parameters_files = ["meta_training_1750_sem_best_parameters.csv",
-                            "meta_training_700_sem_best_parameters.csv",
-                            "meta_training_350_sem_best_parameters.csv",
-                            "meta_training_175_sem_best_parameters.csv",
-                            "meta_training_1750_best_parameters.csv",
-                            "meta_training_700_best_parameters.csv",
-                            "meta_training_350_best_parameters.csv",
-                            "meta_training_175_best_parameters.csv"]
+    # best_parameters_files = ["meta_training_1750_sem_best_parameters.csv",
+    #                         "meta_training_700_sem_best_parameters.csv",
+    #                         "meta_training_350_sem_best_parameters.csv",
+    #                         "meta_training_175_sem_best_parameters.csv",
+    #                         "meta_training_1750_best_parameters.csv",
+    #                         "meta_training_700_best_parameters.csv",
+    #                         "meta_training_350_best_parameters.csv",
+    #                         "meta_training_175_best_parameters.csv"]
 
-    for best_parameters_file in best_parameters_files:
-        df_best_parameters = pd.read_csv(best_parameters_file)
-        best_integration_method =  list(df_best_parameters["integration_method"])[-1]
-        best_dt = list(df_best_parameters["dt"])[-1]
-        best_sensor_std = list(df_best_parameters["sensor_std"])[-1]
-        cf_simulation_config = {"dt":best_dt,"sensor_std":best_sensor_std,"integration_method":best_integration_method}
-        trajectories, scenario_configurations, collisions = evaluate_scenarios(scenarios,rollouts_per_scenario,hf_simulation_config,cf_simulation_config)
+    # for best_parameters_file in best_parameters_files:
+        # df_best_parameters = pd.read_csv(best_parameters_file)
+        # best_integration_method =  list(df_best_parameters["integration_method"])[-1]
+        # best_dt = list(df_best_parameters["dt"])[-1]
+        # best_sensor_std = list(df_best_parameters["sensor_std"])[-1]
+        # cf_simulation_config = {"dt":best_dt,"sensor_std":best_sensor_std,"integration_method":best_integration_method}
+        # trajectories, scenario_configurations, collisions = evaluate_scenarios(scenarios,rollouts_per_scenario,hf_simulation_config,cf_simulation_config)
+        # TP,TN,FP,FN = calculate_confusion_matrix(collisions)
+        # miss_rate = FN/(TP+FN)
+        # false_positive_rate= FP/(FP+TN)
+        # mse_list,bce_list = batch_compare_trajectories(trajectories)
+        # mse_mean = torch.mean(torch.Tensor(mse_list)).item()
+        # mse_std = torch.std(torch.Tensor(mse_list)).item()
+        # print("Results for ",best_parameters_file)
+        # print("Mean MSE: ",mse_mean)
+        # print("Std MSE: ",mse_std)
+        # print("Miss Rate: ",miss_rate)
+        # print("False Positive Rate", false_positive_rate)
+
+    for i in range(3):
+        trajectories, scenario_configurations, collisions = evaluate_scenarios(scenarios,rollouts_per_scenario,hf_simulation_config,hf_simulation_config)
         TP,TN,FP,FN = calculate_confusion_matrix(collisions)
         miss_rate = FN/(TP+FN)
         false_positive_rate= FP/(FP+TN)
         mse_list,bce_list = batch_compare_trajectories(trajectories)
         mse_mean = torch.mean(torch.Tensor(mse_list)).item()
         mse_std = torch.std(torch.Tensor(mse_list)).item()
-        print("Results for ",best_parameters_file)
+        print("Results for ","100%")
         print("Mean MSE: ",mse_mean)
         print("Std MSE: ",mse_std)
         print("Miss Rate: ",miss_rate)
