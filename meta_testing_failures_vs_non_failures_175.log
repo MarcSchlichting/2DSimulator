@@ -119,3 +119,23 @@ Found Failure Scenario
 Found Failure Scenario
 Found Failure Scenario
 Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+Found Failure Scenario
+100%|██████████| 2/2 [41:52<00:00, 1420.48s/it]100%|██████████| 2/2 [41:52<00:00, 1256.25s/it]
+Results for  [175]
+Mean MSE FC:  0.5823840498924255
+Std MSE FC:  0.7698106169700623
+Miss Rate FC:  0.09
+Mean MSE NFC:  1.0753140449523926
+Std MSE NFC:  1.4933794736862183
+Miss Rate NFC:  0.14
+stop
