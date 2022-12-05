@@ -114,3 +114,4 @@
 112,1,BO_MIXED,112,COMPLETED,"{'112_0': {'dt': 0.16, 'sensor_std': 4.66, 'integration_method': 'RK1'}}"
 113,1,BO_MIXED,113,COMPLETED,"{'113_0': {'dt': 0.1, 'sensor_std': 1.15, 'integration_method': 'RK1'}}"
 114,1,BO_MIXED,114,COMPLETED,"{'114_0': {'dt': 0.1, 'sensor_std': 0.98, 'integration_method': 'RK1'}}"
+115,1,BO_MIXED,115,COMPLETED,"{'115_0': {'dt': 0.1, 'sensor_std': 2.36, 'integration_method': 'RK1'}}"
