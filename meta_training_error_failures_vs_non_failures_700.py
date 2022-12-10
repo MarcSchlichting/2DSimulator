@@ -12,9 +12,10 @@ from example_frontal_collision import FrontalCollisionScenario
 from example_sinusoidal_car import SinusoidalCarScenario
 from example_intersection import OrthogonalIntersectionScenario
 
-scenarios = [StoppingCarScenario(),OrthogonalIntersectionScenario(),FrontalCollisionScenario(),SinusoidalCarScenario()]
+# scenarios = [StoppingCarScenario(),OrthogonalIntersectionScenario(),FrontalCollisionScenario(),SinusoidalCarScenario()]
+scenarios = [OrthogonalIntersectionScenario(),FrontalCollisionScenario()]
 hf_simulation_config = {"dt":0.1,"integration_method":"RK4","sensor_std":0.1}
-rollouts_per_scenario = 100
+rollouts_per_scenario = 200
 
 # def evaluate_scenarios(scenarios:list,num_per_scenario:int,hf_simulation_configuration:dict,cf_simulation_configuration):
 #     trajectories = []   #list of tuples (hf_trajectory,cf_trajectory)
